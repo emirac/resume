@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/pages.dart';
 import 'package:resume/widgtes/common/menu_item.dart';
 
 class Menu extends StatelessWidget {
@@ -9,8 +10,6 @@ class Menu extends StatelessWidget {
     return Container(
       height: height,
       child: Stack(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        // crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Positioned(
             top: 0,
@@ -32,31 +31,22 @@ class Menu extends StatelessWidget {
               ),
               Expanded(
                 child: MenuItem(
-                  text: 'About',
-                  isActive: true,
+                  page: Pages.About,
                 ),
               ),
               Expanded(
                 child: MenuItem(
-                  text: 'Projects',
-                  isActive: false,
+                  page: Pages.Projects,
                 ),
               ),
               Expanded(
                 child: MenuItem(
-                  text: 'Contact',
-                  isActive: false,
+                  page: Pages.Contact,
                 ),
               ),
               Spacer(flex: 22),
             ],
           )
-          // Expanded(
-          //   child: VerticalDivider(
-          //     color: Colors.red,
-          //   ),
-          //   flex: 12,
-          // ),
         ],
       ),
     );
