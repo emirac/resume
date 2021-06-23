@@ -3,8 +3,15 @@ import 'package:flutter/material.dart';
 class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('contact page'),
+    double height = MediaQuery.of(context).size.height;
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: height,
+        maxHeight: double.infinity,
+      ),
+      child: Center(
+        child: Text('contact page'),
+      ),
     );
   }
 }

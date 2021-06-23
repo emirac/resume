@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:resume/widgtes/common/diamond.dart';
 
 class PageDivider extends StatelessWidget {
+  final Color color;
+
+  PageDivider({this.color = Colors.red});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,13 +16,15 @@ class PageDivider extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Divider(
-              color: Colors.red,
+              color: this.color,
             ),
           ),
-          Diamond(),
+          Diamond(
+            color: this.color,
+          ),
           Expanded(
             child: Divider(
-              color: Colors.red,
+              color: this.color,
             ),
           ),
         ],
