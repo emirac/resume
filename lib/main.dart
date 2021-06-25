@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Quicksand',
       ),
       home: Scaffold(
         body: MyAppPage(),
@@ -62,8 +63,8 @@ class MyAppPage extends StatelessWidget {
         children: [
           ConstrainedBox(
             constraints: BoxConstraints(
-              minWidth: 124,
-              maxWidth: 144,
+              minWidth: 160,
+              maxWidth: 160,
             ),
             child: Stack(
               children: [
