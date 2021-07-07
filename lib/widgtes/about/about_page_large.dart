@@ -3,7 +3,7 @@ import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/widgtes/about/name.dart';
 import 'package:resume/widgtes/about/skill_card.dart';
 import 'package:resume/widgtes/about/title.dart';
-import 'package:resume/widgtes/common/divider.dart';
+import 'package:resume/widgtes/common/animated_page_divider.dart';
 
 class AboutPageLarge extends StatelessWidget {
   @override
@@ -43,7 +43,7 @@ class AboutPageLarge extends StatelessWidget {
                       ],
                     ),
                   ),
-                  PageDivider(
+                  AnimatedPageDivider(
                     color: Colors.grey,
                   ),
                   Expanded(

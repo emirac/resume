@@ -5,7 +5,7 @@ import 'package:resume/pages/contact_page.dart';
 import 'package:resume/pages/projects_page.dart';
 import 'package:resume/providers/menu_provider.dart';
 import 'package:resume/utils/pages.dart';
-import 'package:resume/widgtes/common/divider.dart';
+import 'package:resume/widgtes/common/page_divider.dart';
 import 'package:resume/widgtes/common/menu.dart';
 
 void main() {
