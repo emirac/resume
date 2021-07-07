@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/utils/screen_sizes.dart';
 import 'package:resume/widgtes/about/about_page_large.dart';
+import 'package:resume/widgtes/about/about_page_medium.dart';
 import 'package:resume/widgtes/about/name.dart';
 import 'package:resume/widgtes/about/skill_card.dart';
 import 'package:resume/widgtes/about/title.dart';
@@ -16,7 +17,7 @@ class AboutPage extends StatelessWidget {
       case ScreenSizes.Large:
         return AboutPageLarge();
       case ScreenSizes.Medium:
-        return Container();
+        return AboutPageMedium();
       case ScreenSizes.Small:
         return Container();
       default:
