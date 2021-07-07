@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/widgtes/common/diamond.dart';
 
 class Name extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+
     return new Container(
-      width: 250.0,
-      height: 250.0,
+      width: ScreenSizeHelper.getLargePageSizing2(280, width),
+      height: ScreenSizeHelper.getLargePageSizing2(280, width),
       decoration: new BoxDecoration(
         color: Colors.red,
         shape: BoxShape.circle,
