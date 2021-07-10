@@ -16,7 +16,7 @@ class AboutPageLarge extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            flex: 7,
+            flex: 9,
             child: Padding(
               padding: EdgeInsets.all(
                 ScreenSizeHelper.getLargePageSizing(30, width),
@@ -28,7 +28,7 @@ class AboutPageLarge extends StatelessWidget {
                   Flexible(
                     child: Padding(
                       padding: EdgeInsets.all(
-                        ScreenSizeHelper.getLargePageSizing(48, width),
+                        ScreenSizeHelper.getLargePageSizing(46, width),
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -76,19 +76,19 @@ class AboutPageLarge extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 4,
+            flex: 5,
             child: SizedBox(
               height: height,
               child: Stack(
                 children: [
                   Positioned(
                     top: ScreenSizeHelper.getLargePageSizing2(64, width),
-                    right: ScreenSizeHelper.getLargePageSizing2(145, width),
+                    right: ScreenSizeHelper.getLargePageSizing2(125, width),
                     child: Name(),
                   ),
                   Positioned(
-                    right: ScreenSizeHelper.getLargePageSizing2(52, width),
                     top: ScreenSizeHelper.getLargePageSizing2(265, width),
+                    right: ScreenSizeHelper.getLargePageSizing2(36, width),
                     child: TitleCircle(),
                   ),
                 ],

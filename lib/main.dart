@@ -5,8 +5,11 @@ import 'package:resume/pages/contact_page.dart';
 import 'package:resume/pages/projects_page.dart';
 import 'package:resume/providers/menu_provider.dart';
 import 'package:resume/utils/pages.dart';
+import 'package:resume/utils/screen_size_helper.dart';
+import 'package:resume/utils/screen_sizes.dart';
+import 'package:resume/widgtes/common/menu_large_medium.dart';
+import 'package:resume/widgtes/common/menu_small.dart';
 import 'package:resume/widgtes/common/page_divider.dart';
-import 'package:resume/widgtes/common/menu.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
@@ -56,26 +59,14 @@ class MyAppPage extends StatelessWidget {
     final _data = Provider.of<MenuProvider>(context);
 
     _data.addListener(() {});
+    double width = MediaQuery.of(context).size.width;
 
     return Container(
-      // padding: EdgeInsets.only(right: 16, left: 16),
       child: Row(
         children: [
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              minWidth: 160,
-              maxWidth: 160,
-            ),
-            child: Stack(
-              children: [
-                Positioned(
-                  child: Menu(),
-                  top: 0,
-                  left: 24,
-                ),
-              ],
-            ),
-          ),
+          ScreenSizeHelper.getScreenSize(width) == ScreenSizes.Small
+              ? MenuSmall()
+              : MenuLargeMedium(),
           Expanded(
             flex: 10,
             child: Consumer<MenuProvider>(builder: (_, MenuProvider menu, __) {
