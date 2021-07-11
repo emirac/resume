@@ -1,5 +1,7 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:resume/providers/projects_provider.dart';
 import 'package:resume/widgtes/common/diamond.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -33,25 +35,29 @@ class ProjectCardInfo extends StatelessWidget {
       padding: EdgeInsets.all(8),
       child: SizedBox(
         width: 350,
-        child: Column(
-          children: [
-            ProjectCardTitle('Project title'),
-            Expanded(
-              child: Text(
-                'Project description that describes what this project is about. How started doing it. What was the big idea. How long it took, what I learned. What problem it solve, etc.',
-                style: TextStyle(
-                  color: Colors.grey.shade700,
+        child: Consumer<ProjectsProvider>(
+          builder: (_, ProjectsProvider projects, __) => Column(
+            children: [
+              ProjectCardTitle(projects.selectedProject?.projectName ?? ''),
+              Expanded(
+                child: Text(
+                  projects.selectedProject?.description ?? '',
+                  style: TextStyle(
+                    color: Colors.grey.shade700,
+                  ),
                 ),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ProjectCardLink('Code', 'https://github.com/emirac'),
-                ProjectCardLink('See live', 'https://github.com/emirac'),
-              ],
-            )
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ProjectCardLink(
+                      'Code', projects.selectedProject?.codeURL ?? ''),
+                  ProjectCardLink(
+                      'See live', projects.selectedProject?.demoURL ?? ''),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -85,8 +91,10 @@ class ProjectCardTechnologies extends StatelessWidget {
           border: Border.all(color: Colors.grey.shade300),
         ),
         padding: EdgeInsets.all(8),
-        child: Column(
-          children: [],
+        child: Consumer<ProjectsProvider>(
+          builder: (_, ProjectsProvider projects, __) => Column(
+            children: [],
+          ),
         ),
       ),
     );

@@ -4,6 +4,7 @@ import 'package:resume/pages/about_page.dart';
 import 'package:resume/pages/contact_page.dart';
 import 'package:resume/pages/projects_page.dart';
 import 'package:resume/providers/menu_provider.dart';
+import 'package:resume/providers/projects_provider.dart';
 import 'package:resume/utils/pages.dart';
 import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/utils/screen_sizes.dart';
@@ -15,6 +16,9 @@ void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider<MenuProvider>(
       create: (_) => MenuProvider(),
+    ),
+    ChangeNotifierProvider<ProjectsProvider>(
+      create: (_) => ProjectsProvider(),
     ),
   ], child: MyApp()));
 }
