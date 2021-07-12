@@ -1,11 +1,17 @@
 class Project {
-  String projectName;
-  String description;
-  String? codeURL;
-  String? demoURL;
-  List<String>? images;
-  List<String> technologies;
+  final String projectName;
+  final String description;
+  final String? codeURL;
+  final String? demoURL;
+  final List<String> images;
+  final List<String> technologies;
 
-  Project(this.projectName, this.description, this.technologies,
-      {this.codeURL, this.demoURL, this.images});
+  Project({
+    this.projectName = '',
+    this.description = '',
+    this.technologies = const [],
+    this.images = const [],
+    this.codeURL,
+    this.demoURL,
+  });
 }

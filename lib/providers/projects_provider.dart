@@ -12,27 +12,40 @@ class ProjectsProvider extends ChangeNotifier {
   void setInitialData() {
     projects.add(
       new Project(
-        'Resume',
-        'A personal website that ',
-        [],
-        codeURL: 'https://github.com/emirac/resume',
-        demoURL: 'https://emirac.github.io',
-        images: [],
+          projectName: 'Resume',
+          description: 'A personal website that ',
+          images: ['test_url'],
+          codeURL: 'https://github.com/emirac/resume',
+          demoURL: 'https://emirac.github.io',
+          technologies: ['Flutter']),
+    );
+    projects.add(
+      new Project(
+        projectName: 'EatSmart',
+        description: '',
+        images: ['test_url'],
+        technologies: [
+          'Flutter',
+          'C#',
+          '.NET',
+          'Entity Framework',
+          'SQL Server'
+        ],
       ),
     );
     projects.add(
       new Project(
-        'EatSmart',
-        '',
-        [],
-        images: [],
-      ),
-    );
-    projects.add(
-      new Project(
-        'HQ Sales',
-        '',
-        [],
+        projectName: 'HQ Sales',
+        description: '',
+        technologies: [
+          'Vue.js',
+          'Typescript',
+          'C#',
+          '.NET',
+          'Entity Framework',
+          'SQL Server',
+          'Azure'
+        ],
       ),
     );
     this.setSelectedProject(0);

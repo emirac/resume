@@ -14,14 +14,24 @@ class ProjectCard extends StatelessWidget {
         maxHeight: 350,
         minHeight: 350,
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          ProjectCardInfo(),
-          ProjectCardImage(),
-          ProjectCardTechnologies(),
-        ],
+      child: Consumer<ProjectsProvider>(
+        builder: (_, ProjectsProvider projects, __) => Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ProjectCardInfo(),
+            SizedBox(
+              width: 32,
+            ),
+            if (projects.selectedProject?.images.isNotEmpty ?? false)
+              ProjectCardImage(),
+            if (projects.selectedProject?.images.isNotEmpty ?? false)
+              SizedBox(
+                width: 32,
+              ),
+            ProjectCardTechnologies(),
+          ],
+        ),
       ),
     );
   }
@@ -88,12 +98,24 @@ class ProjectCardTechnologies extends StatelessWidget {
       width: 350,
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey.shade300),
+          border: Border.all(color: Colors.red),
         ),
         padding: EdgeInsets.all(8),
         child: Consumer<ProjectsProvider>(
           builder: (_, ProjectsProvider projects, __) => Column(
-            children: [],
+            children: [
+              ProjectCardTitle('technologies'),
+              Container(
+                padding: EdgeInsets.all(32),
+                child: Column(
+                  children: [
+                    ...projects.selectedProject!.technologies
+                        .map((item) => TechnologyItem(item))
+                        .toList()
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -163,6 +185,9 @@ class ProjectCardLink extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(4),
         child: InkWell(
+          mouseCursor: this.link.length == 0
+              ? SystemMouseCursors.forbidden
+              : SystemMouseCursors.click,
           child: ClipPath(
             clipper: _HexagonClipper(),
             child: Container(
@@ -177,13 +202,15 @@ class ProjectCardLink extends StatelessWidget {
                 this.linkText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.red,
+                  color: this.link.length > 0 ? Colors.red : Colors.grey,
                   fontSize: 12,
                 ),
               ),
             ),
           ),
-          onTap: () => html.window.open(this.link, 'new tab'),
+          onTap: () => {
+            if (this.link.length > 0) {html.window.open(this.link, 'new tab')}
+          },
         ),
       ),
     );
@@ -205,8 +232,49 @@ class ProjectCardMinified extends StatelessWidget {
             color: Colors.red,
           ),
         ),
-        child: ProjectCardTitle(this.projectName),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                this.projectName.toUpperCase(),
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 14,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
+    );
+  }
+}
+
+class TechnologyItem extends StatelessWidget {
+  String item;
+
+  TechnologyItem(this.item);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Diamond(
+          size: 8,
+          color: Colors.red,
+        ),
+        SizedBox(
+          width: 8,
+        ),
+        Text(
+          this.item,
+          style: TextStyle(
+            color: Colors.red,
+          ),
+        ),
+      ],
     );
   }
 }
