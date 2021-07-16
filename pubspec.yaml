@@ -53,6 +53,10 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+
+  assets:
+    - assets/images/test1.jpeg
+
   fonts:
     - family: Source Code Pro
       fonts:

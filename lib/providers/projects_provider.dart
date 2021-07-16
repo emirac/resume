@@ -14,7 +14,10 @@ class ProjectsProvider extends ChangeNotifier {
       new Project(
           projectName: 'Resume',
           description: 'A personal website that ',
-          images: ['test_url'],
+          images: [
+            'images/test1.jpeg',
+            'images/test1.jpeg',
+          ],
           codeURL: 'https://github.com/emirac/resume',
           demoURL: 'https://emirac.github.io',
           technologies: ['Flutter']),
@@ -23,7 +26,10 @@ class ProjectsProvider extends ChangeNotifier {
       new Project(
         projectName: 'EatSmart',
         description: '',
-        images: ['test_url'],
+        images: [
+          'images/test1.jpeg',
+          'images/test1.jpeg',
+        ],
         technologies: [
           'Flutter',
           'C#',

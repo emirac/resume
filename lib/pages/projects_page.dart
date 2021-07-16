@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:resume/providers/projects_provider.dart';
 import 'package:resume/widgtes/projects/project_card.dart';
+import 'package:resume/widgtes/projects/project_minified_card.dart';
 
 class ProjectsPage extends StatelessWidget {
   @override
