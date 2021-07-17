@@ -39,7 +39,19 @@ class ContactPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Emilija Raciūtė \u00a9 2021'),
+              Expanded(
+                child: Text(
+                  'Emilija Raciūtė',
+                  textAlign: TextAlign.end,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4),
+                child: Text('\u00a9'),
+              ),
+              Expanded(
+                child: Text('2021'),
+              ),
             ],
           ),
           SizedBox(
