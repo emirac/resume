@@ -57,7 +57,6 @@ class ProjectsProvider extends ChangeNotifier {
       ),
     );
     this.setSelectedProject(0);
-    this.setSelectedImage(Direction.Forward);
   }
 
   void setSelectedProject(int index) {

@@ -10,8 +10,11 @@ class ProjectCardInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey.shade300,
+      height: 350,
+      width: 350,
       padding: EdgeInsets.all(8),
       child: SizedBox(
+        height: 350,
         width: 350,
         child: Consumer<ProjectsProvider>(
           builder: (_, ProjectsProvider projects, __) => Column(

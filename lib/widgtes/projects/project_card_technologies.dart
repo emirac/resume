@@ -10,6 +10,7 @@ class ProjectCardTechnologies extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 350,
+      height: 350,
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(color: Colors.red),

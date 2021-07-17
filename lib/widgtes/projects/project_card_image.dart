@@ -7,8 +7,15 @@ import 'package:resume/providers/projects_provider.dart';
 class ProjectCardImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 350,
+    return ConstrainedBox(
+      // width: 350,
+      // height: 350,
+      constraints: BoxConstraints(
+        minWidth: 280,
+        maxWidth: 350,
+        maxHeight: 350,
+        minHeight: 280,
+      ),
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey.shade300),
