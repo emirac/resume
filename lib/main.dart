@@ -5,7 +5,6 @@ import 'package:resume/pages/contact_page.dart';
 import 'package:resume/pages/projects_page.dart';
 import 'package:resume/providers/menu_provider.dart';
 import 'package:resume/providers/projects_provider.dart';
-import 'package:resume/utils/pages.dart';
 import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/utils/screen_sizes.dart';
 import 'package:resume/widgtes/common/menu_large_medium.dart';
@@ -40,27 +39,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyAppPage extends StatelessWidget {
-  void scrollTo(Pages page, ScrollController controller) {
-    if (!controller.hasClients) {
-      return;
-    }
-
-    switch (page) {
-      case Pages.About:
-        controller.animateTo(
-          0,
-          duration: new Duration(milliseconds: 30),
-          curve: Curves.ease,
-        );
-        print('scrolling');
-        break;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    var scrollController = new ScrollController();
-    final _data = Provider.of<MenuProvider>(context);
+    final _data = Provider.of<MenuProvider>(context, listen: false);
 
     _data.addListener(() {});
     double width = MediaQuery.of(context).size.width;
@@ -74,25 +55,57 @@ class MyAppPage extends StatelessWidget {
           Expanded(
             flex: 10,
             child: Consumer<MenuProvider>(builder: (_, MenuProvider menu, __) {
-              scrollTo(menu.activeRoute, scrollController);
-              return ListView(
-                padding: EdgeInsets.only(
-                  right: 24,
-                ),
+              return SingleChildScrollView(
+                controller: _data.navigationController?.scrollController,
                 physics: BouncingScrollPhysics(),
-                controller: scrollController,
-                children: [
-                  AboutPage(),
-                  PageDivider(),
-                  ProjectsPage(),
-                  PageDivider(),
-                  ContactPage(),
-                ],
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    right: 24,
+                  ),
+                  child: Column(
+                    children: [
+                      WidgetSizeTracker(
+                        child: AboutPage(),
+                        index: 0,
+                      ),
+                      WidgetSizeTracker(
+                        child: ProjectsPage(),
+                        index: 1,
+                      ),
+                      // PageDivider(),
+                      WidgetSizeTracker(
+                        child: ContactPage(),
+                        index: 2,
+                      ),
+                    ],
+                  ),
+                ),
               );
             }),
           ),
         ],
       ),
     );
+  }
+}
+
+class WidgetSizeTracker extends StatelessWidget {
+  final Widget child;
+  final int index;
+
+  const WidgetSizeTracker({
+    Key? key,
+    required this.child,
+    required this.index,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final _data = Provider.of<MenuProvider>(context, listen: false);
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      _data.navigationController
+          ?.registerWidgetChange(index, context.size?.height ?? 0);
+    });
+    return child;
   }
 }

@@ -4,19 +4,31 @@ import 'package:resume/utils/screen_sizes.dart';
 import 'package:resume/widgtes/about/about_page_large.dart';
 import 'package:resume/widgtes/about/about_page_medium.dart';
 import 'package:resume/widgtes/about/about_page_small.dart';
+import 'package:resume/widgtes/common/page_divider.dart';
 
 class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    Widget widget;
 
     switch (ScreenSizeHelper.getScreenSize(width)) {
       case ScreenSizes.Large:
-        return AboutPageLarge();
+        widget = AboutPageLarge();
+        break;
       case ScreenSizes.Medium:
-        return AboutPageMedium();
+        widget = AboutPageMedium();
+        break;
       case ScreenSizes.Small:
-        return AboutPageSmall();
+        widget = AboutPageSmall();
+        break;
     }
+
+    return Column(
+      children: [
+        widget,
+        PageDivider(),
+      ],
+    );
   }
 }
