@@ -4,8 +4,8 @@ import 'package:resume/utils/pages.dart';
 
 class MenuProvider extends ChangeNotifier {
   NavigationProvider? navigationController;
-
   Pages activeRoute = Pages.About;
+  bool showMenu = false;
 
   MenuProvider() {
     this.navigationController = NavigationProvider(this.pageChanged);
@@ -27,6 +27,11 @@ class MenuProvider extends ChangeNotifier {
     }
 
     this.activeRoute = route;
+
+    if (this.showMenu) {
+      this.toggleMenu();
+    }
+
     this.notifyListeners();
   }
 
@@ -40,6 +45,11 @@ class MenuProvider extends ChangeNotifier {
     } else {
       throw new Exception('Invalid page');
     }
+    notifyListeners();
+  }
+
+  void toggleMenu() {
+    this.showMenu = !this.showMenu;
     notifyListeners();
   }
 }
