@@ -8,8 +8,6 @@ class ProjectCardImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      // width: 350,
-      // height: 350,
       constraints: BoxConstraints(
         minWidth: 280,
         maxWidth: 350,
@@ -18,7 +16,7 @@ class ProjectCardImage extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey.shade300),
+          border: Border.all(color: Theme.of(context).highlightColor),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,

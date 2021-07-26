@@ -13,7 +13,7 @@ class ProjectCardTechnologies extends StatelessWidget {
       height: 350,
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.red),
+          border: Border.all(color: Theme.of(context).primaryColor),
         ),
         padding: EdgeInsets.all(8),
         child: Consumer<ProjectsProvider>(
@@ -49,7 +49,7 @@ class TechnologyItem extends StatelessWidget {
       children: [
         Diamond(
           size: 8,
-          color: Colors.red,
+          color: Theme.of(context).primaryColor,
         ),
         SizedBox(
           width: 8,
@@ -57,7 +57,7 @@ class TechnologyItem extends StatelessWidget {
         Text(
           this.item,
           style: TextStyle(
-            color: Colors.red,
+            color: Theme.of(context).primaryColor,
           ),
         ),
       ],

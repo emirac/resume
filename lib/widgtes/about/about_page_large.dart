@@ -50,7 +50,7 @@ class AboutPageLarge extends StatelessWidget {
                     ),
                   ),
                   AnimatedPageDivider(
-                    color: Colors.grey,
+                    color: Theme.of(context).accentColor,
                   ),
                   Flexible(
                     // flex: 3,

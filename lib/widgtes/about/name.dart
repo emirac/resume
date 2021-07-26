@@ -11,7 +11,7 @@ class Name extends StatelessWidget {
       width: ScreenSizeHelper.getLargePageSizing2(280, width),
       height: ScreenSizeHelper.getLargePageSizing2(280, width),
       decoration: new BoxDecoration(
-        color: Colors.red,
+        color: Theme.of(context).primaryColor,
         shape: BoxShape.circle,
       ),
       child: Column(

@@ -57,7 +57,7 @@ class AboutPageSmall extends StatelessWidget {
                 padding: EdgeInsets.all(16),
               ),
               AnimatedPageDivider(
-                color: Colors.grey,
+                color: Theme.of(context).accentColor,
               ),
               Padding(
                 padding: EdgeInsets.all(

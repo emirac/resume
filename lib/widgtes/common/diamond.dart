@@ -2,10 +2,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class Diamond extends StatelessWidget {
-  final Color color;
+  final Color? color;
   final double size;
 
-  Diamond({this.color = Colors.red, this.size = 12});
+  Diamond({this.color, this.size = 12});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class Diamond extends StatelessWidget {
         height: this.size,
         width: this.size,
         child: DecoratedBox(
-          decoration: BoxDecoration(color: this.color),
+          decoration: BoxDecoration(color: this.color ?? Colors.redAccent[400]),
         ),
       ),
     );

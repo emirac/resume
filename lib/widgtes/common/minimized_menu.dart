@@ -25,7 +25,7 @@ class MenuIcon extends StatelessWidget {
           onTap: () => menu.toggleMenu(),
           child: new Icon(
             Icons.menu,
-            color: Colors.red,
+            color: Theme.of(context).primaryColor,
           ),
         ),
       ),
@@ -64,7 +64,7 @@ class FullScreenMenu extends StatelessWidget {
                 onTap: () => menu.toggleMenu(),
                 child: Icon(
                   Icons.close,
-                  color: Colors.red,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
             ),
@@ -108,8 +108,8 @@ class FullScreenMenuItem extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 12,
                     color: menu.activeRoute == this.page
-                        ? Colors.red
-                        : Colors.grey,
+                        ? Theme.of(context).primaryColor
+                        : Theme.of(context).accentColor,
                     decoration: TextDecoration.none,
                   ),
                 ),

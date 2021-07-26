@@ -2,12 +2,13 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class AnimatedDiamond extends StatefulWidget {
-  final Color color;
+  Color? color;
 
-  AnimatedDiamond({this.color = Colors.red});
+  AnimatedDiamond({this.color});
 
   @override
-  _AnimatedDiamond createState() => _AnimatedDiamond();
+  _AnimatedDiamond createState() =>
+      _AnimatedDiamond(this.color ?? Colors.redAccent[400]!);
 }
 
 class _AnimatedDiamond extends State<AnimatedDiamond>
@@ -22,7 +23,10 @@ class _AnimatedDiamond extends State<AnimatedDiamond>
     curve: Curves.easeIn,
   );
 
+  _AnimatedDiamond(this.color);
+
   Future<double> get size => Future<double>.value(12);
+  final Color color;
 
   @override
   Widget build(BuildContext context) {

@@ -14,14 +14,14 @@ class SkillCard extends StatelessWidget {
         res.add(Padding(
           padding: const EdgeInsets.all(4),
           child: Diamond(
-            color: Colors.red,
+            color: Colors.redAccent[400],
           ),
         ));
       } else {
         res.add(Padding(
           padding: const EdgeInsets.all(4),
           child: Diamond(
-            color: Colors.grey,
+            color: Colors.grey[300],
           ),
         ));
       }

@@ -9,7 +9,7 @@ class ProjectCardInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey.shade300,
+      color: Colors.grey[200],
       height: 350,
       width: 350,
       padding: EdgeInsets.all(8),
@@ -24,7 +24,7 @@ class ProjectCardInfo extends StatelessWidget {
                 child: Text(
                   projects.selectedProject?.description ?? '',
                   style: TextStyle(
-                    color: Colors.grey.shade700,
+                    color: Theme.of(context).accentColor,
                   ),
                 ),
               ),
@@ -97,7 +97,9 @@ class ProjectCardLink extends StatelessWidget {
                 this.linkText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: this.link.length > 0 ? Colors.red : Colors.grey,
+                  color: this.link.length > 0
+                      ? Theme.of(context).primaryColor
+                      : Theme.of(context).accentColor,
                   fontSize: 12,
                 ),
               ),

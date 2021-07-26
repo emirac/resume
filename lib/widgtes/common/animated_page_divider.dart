@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:resume/widgtes/common/animated_diamond.dart';
 
 class AnimatedPageDivider extends StatefulWidget {
-  final Color color;
+  final Color? color;
 
-  AnimatedPageDivider({this.color = Colors.red});
+  AnimatedPageDivider({this.color});
 
   @override
-  _AnimatedPageDivider createState() => _AnimatedPageDivider();
+  _AnimatedPageDivider createState() =>
+      _AnimatedPageDivider(this.color ?? Colors.redAccent[400]!);
 }
 
 class _AnimatedPageDivider extends State<AnimatedPageDivider>
@@ -18,8 +19,10 @@ class _AnimatedPageDivider extends State<AnimatedPageDivider>
   )..forward();
 
   Future<double> get width => Future<double>.value(double.infinity);
+  final Color color;
 
-  _AnimatedPageDivider();
+  _AnimatedPageDivider(this.color);
+
   @override
   Widget build(BuildContext context) {
     return Padding(

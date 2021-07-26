@@ -7,7 +7,7 @@ class NameSmall extends StatelessWidget {
       width: 215,
       height: 44,
       decoration: new BoxDecoration(
-        color: Colors.red,
+        color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(22),
       ),
       child: Column(

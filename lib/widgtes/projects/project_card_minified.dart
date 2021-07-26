@@ -13,7 +13,7 @@ class ProjectCardMinified extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.red,
+            color: Theme.of(context).primaryColor,
           ),
         ),
         child: Row(
@@ -24,7 +24,7 @@ class ProjectCardMinified extends StatelessWidget {
               child: Text(
                 this.projectName.toUpperCase(),
                 style: TextStyle(
-                  color: Colors.red,
+                  color: Theme.of(context).primaryColor,
                   fontSize: 14,
                 ),
               ),

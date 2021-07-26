@@ -27,8 +27,8 @@ class MenuItem extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                       color: menu.activeRoute == this.page
-                          ? Colors.red
-                          : Colors.grey),
+                          ? Theme.of(context).primaryColor
+                          : Theme.of(context).accentColor),
                 ),
               ),
               Padding(
@@ -42,8 +42,8 @@ class MenuItem extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 12,
                         color: menu.activeRoute == this.page
-                            ? Colors.red
-                            : Colors.grey,
+                            ? Theme.of(context).primaryColor
+                            : Theme.of(context).accentColor,
                         decoration: TextDecoration.none,
                       ),
                     ),
@@ -54,14 +54,14 @@ class MenuItem extends StatelessWidget {
                 padding: const EdgeInsets.all(4.0),
                 child: Diamond(
                     color: menu.activeRoute == this.page
-                        ? Colors.red
+                        ? Theme.of(context).primaryColor
                         : Colors.transparent),
               ),
               Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: Diamond(
                     color: menu.activeRoute == this.page
-                        ? Colors.red
+                        ? Theme.of(context).primaryColor
                         : Colors.transparent),
               ),
             ],

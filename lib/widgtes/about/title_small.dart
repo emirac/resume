@@ -7,7 +7,7 @@ class TitleSmall extends StatelessWidget {
       width: 175,
       height: 30,
       decoration: new BoxDecoration(
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Theme.of(context).accentColor),
         borderRadius: BorderRadius.circular(15),
       ),
       child: Column(
@@ -18,7 +18,7 @@ class TitleSmall extends StatelessWidget {
             'Software developer',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.red,
+              color: Theme.of(context).primaryColor,
               fontSize: 14,
             ),
           ),

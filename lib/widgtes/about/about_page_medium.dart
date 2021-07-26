@@ -61,7 +61,7 @@ class AboutPageMedium extends StatelessWidget {
                 ),
               ),
               AnimatedPageDivider(
-                color: Colors.grey,
+                color: Theme.of(context).accentColor,
               ),
               Padding(
                 padding: EdgeInsets.all(

@@ -11,7 +11,7 @@ class TitleCircle extends StatelessWidget {
       height: ScreenSizeHelper.getLargePageSizing2(215, width),
       decoration: new BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Theme.of(context).accentColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,7 +21,7 @@ class TitleCircle extends StatelessWidget {
             'Software developer',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.red,
+              color: Theme.of(context).primaryColor,
               fontSize: 18,
             ),
           ),

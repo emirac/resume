@@ -34,7 +34,7 @@ class ContactPage extends StatelessWidget {
             ),
           ),
           PageDivider(
-            color: Colors.grey,
+            color: Theme.of(context).accentColor,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -43,14 +43,21 @@ class ContactPage extends StatelessWidget {
                 child: Text(
                   'Emilija Raciūtė',
                   textAlign: TextAlign.end,
+                  style: TextStyle(color: Theme.of(context).accentColor),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(4),
-                child: Text('\u00a9'),
+                child: Text(
+                  '\u00a9',
+                  style: TextStyle(color: Theme.of(context).accentColor),
+                ),
               ),
               Expanded(
-                child: Text('2021'),
+                child: Text(
+                  '2021',
+                  style: TextStyle(color: Theme.of(context).accentColor),
+                ),
               ),
             ],
           ),
@@ -77,7 +84,7 @@ class ContactItem extends StatelessWidget {
         children: [
           FaIcon(
             this.icon,
-            color: Colors.red,
+            color: Theme.of(context).primaryColor,
           ),
           SizedBox(
             width: 8,
@@ -88,7 +95,7 @@ class ContactItem extends StatelessWidget {
               this.link,
               style: TextStyle(
                 decoration: TextDecoration.none,
-                color: Colors.red,
+                color: Theme.of(context).primaryColor,
               ),
             ),
             hoverChild: MouseRegion(
@@ -101,7 +108,7 @@ class ContactItem extends StatelessWidget {
                   this.link,
                   style: TextStyle(
                     decoration: TextDecoration.underline,
-                    color: Colors.red,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ),

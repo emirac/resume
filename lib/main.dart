@@ -9,7 +9,6 @@ import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/utils/screen_sizes.dart';
 import 'package:resume/widgtes/common/menu_large_medium.dart';
 import 'package:resume/widgtes/common/menu_small.dart';
-import 'package:resume/widgtes/common/page_divider.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
@@ -28,7 +27,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.redAccent[400],
+        accentColor: Colors.grey[500],
+        highlightColor: Colors.grey[300],
         fontFamily: 'Quicksand',
       ),
       home: Scaffold(

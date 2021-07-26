@@ -19,7 +19,7 @@ class Menu extends StatelessWidget {
               width: 1,
               child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
             ),
