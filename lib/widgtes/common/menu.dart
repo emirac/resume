@@ -29,22 +29,16 @@ class Menu extends StatelessWidget {
               Spacer(
                 flex: 2,
               ),
-              Expanded(
-                child: MenuItem(
-                  page: Pages.About,
-                ),
+              MenuItem(
+                page: Pages.About,
               ),
-              Expanded(
-                child: MenuItem(
-                  page: Pages.Projects,
-                ),
+              MenuItem(
+                page: Pages.Projects,
               ),
-              Expanded(
-                child: MenuItem(
-                  page: Pages.Contact,
-                ),
+              MenuItem(
+                page: Pages.Contact,
               ),
-              Spacer(flex: 22),
+              Spacer(flex: 20),
             ],
           )
         ],
