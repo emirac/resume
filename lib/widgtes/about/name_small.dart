@@ -10,19 +10,14 @@ class NameSmall extends StatelessWidget {
         color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(22),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'EMILIJA RACIŪTĖ',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-            ),
+      child: Center(
+        child: Text(
+          'EMILIJA RACIŪTĖ',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
           ),
-        ],
+        ),
       ),
     );
   }

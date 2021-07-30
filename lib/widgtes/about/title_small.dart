@@ -10,19 +10,14 @@ class TitleSmall extends StatelessWidget {
         border: Border.all(color: Theme.of(context).accentColor),
         borderRadius: BorderRadius.circular(15),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Software developer',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Theme.of(context).primaryColor,
-              fontSize: 14,
-            ),
+      child: Center(
+        child: Text(
+          'Software developer',
+          style: TextStyle(
+            color: Theme.of(context).primaryColor,
+            fontSize: 14,
           ),
-        ],
+        ),
       ),
     );
   }

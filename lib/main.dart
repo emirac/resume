@@ -73,7 +73,6 @@ class MyAppPage extends StatelessWidget {
                         child: ProjectsPage(),
                         index: 1,
                       ),
-                      // PageDivider(),
                       WidgetSizeTracker(
                         child: ContactPage(),
                         index: 2,
