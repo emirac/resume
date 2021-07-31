@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:resume/providers/menu_provider.dart';
 import 'package:resume/utils/pages.dart';
 
-import 'diamond.dart';
+import '../diamond.dart';
 
 class MinimizedMenu extends StatelessWidget {
   @override

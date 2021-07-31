@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/utils/pages.dart';
-import 'package:resume/widgtes/common/menu_item.dart';
+import 'package:resume/widgtes/common/menu/menu_item.dart';
+import 'package:resume/widgtes/common/page_decorators/left_decorator.dart';
 
 class Menu extends StatelessWidget {
   @override
@@ -23,6 +24,10 @@ class Menu extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 12.0),
+            child: LeftDecorator(),
           ),
           Column(
             children: [

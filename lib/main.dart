@@ -7,8 +7,10 @@ import 'package:resume/providers/menu_provider.dart';
 import 'package:resume/providers/projects_provider.dart';
 import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/utils/screen_sizes.dart';
-import 'package:resume/widgtes/common/menu_large_medium.dart';
-import 'package:resume/widgtes/common/menu_small.dart';
+import 'package:resume/widgtes/common/menu/menu_large_medium.dart';
+import 'package:resume/widgtes/common/menu/menu_small.dart';
+import 'package:resume/widgtes/common/page_decorators/left_decorator.dart';
+import 'package:resume/widgtes/common/page_decorators/right_decorator.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
@@ -48,41 +50,47 @@ class MyAppPage extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
-      child: Row(
+      child: Stack(
         children: [
-          ScreenSizeHelper.getScreenSize(width) == ScreenSizes.Small
-              ? MenuSmall()
-              : MenuLargeMedium(),
-          Expanded(
-            flex: 10,
-            child: Consumer<MenuProvider>(builder: (_, MenuProvider menu, __) {
-              return SingleChildScrollView(
-                controller: _data.navigationController?.scrollController,
-                physics: BouncingScrollPhysics(),
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    right: 24,
-                  ),
-                  child: Column(
-                    children: [
-                      WidgetSizeTracker(
-                        child: AboutPage(),
-                        index: 0,
+          Row(
+            children: [
+              ScreenSizeHelper.getScreenSize(width) == ScreenSizes.Small
+                  ? MenuSmall()
+                  : MenuLargeMedium(),
+              Expanded(
+                flex: 10,
+                child:
+                    Consumer<MenuProvider>(builder: (_, MenuProvider menu, __) {
+                  return SingleChildScrollView(
+                    controller: _data.navigationController?.scrollController,
+                    physics: BouncingScrollPhysics(),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 24,
                       ),
-                      WidgetSizeTracker(
-                        child: ProjectsPage(),
-                        index: 1,
+                      child: Column(
+                        children: [
+                          WidgetSizeTracker(
+                            child: AboutPage(),
+                            index: 0,
+                          ),
+                          WidgetSizeTracker(
+                            child: ProjectsPage(),
+                            index: 1,
+                          ),
+                          WidgetSizeTracker(
+                            child: ContactPage(),
+                            index: 2,
+                          ),
+                        ],
                       ),
-                      WidgetSizeTracker(
-                        child: ContactPage(),
-                        index: 2,
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }),
+                    ),
+                  );
+                }),
+              ),
+            ],
           ),
+          Positioned(child: RightDecorator(), right: 0)
         ],
       ),
     );
