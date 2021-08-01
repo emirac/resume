@@ -2,7 +2,7 @@ import 'package:resume/utils/screen_sizes.dart';
 
 class ScreenSizeHelper {
   static ScreenSizes getScreenSize(double width) {
-    if (width >= 1024) {
+    if (width >= 1056) {
       return ScreenSizes.Large;
     } else if (width >= 550) {
       return ScreenSizes.Medium;
@@ -24,7 +24,7 @@ class ScreenSizeHelper {
   static getLargePageSizing2(double padding, double width) {
     if (width >= 1990) {
       return padding;
-    } else if (width >= 1100) {
+    } else if (width >= 1200) {
       return padding * 0.83;
     } else {
       return padding * 0.75;
@@ -34,10 +34,10 @@ class ScreenSizeHelper {
   static getMediumPageSizing(int padding, double width) {
     if (width >= 960) {
       return padding;
-    } else if (width >= 768) {
+    } else if (width >= 789) {
       return padding * 0.64;
     } else {
-      return padding * 0.58;
+      return padding * 0.46;
     }
   }
 }

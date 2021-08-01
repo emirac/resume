@@ -90,7 +90,8 @@ class MyAppPage extends StatelessWidget {
               ),
             ],
           ),
-          Positioned(child: RightDecorator(), right: 0)
+          if (ScreenSizeHelper.getScreenSize(width) != ScreenSizes.Small)
+            Positioned(child: RightDecorator(), right: 0)
         ],
       ),
     );

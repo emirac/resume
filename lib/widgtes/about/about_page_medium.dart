@@ -19,12 +19,12 @@ class AboutPageMedium extends StatelessWidget {
             children: [
               Positioned(
                 top: 36,
-                right: 145,
+                right: 132,
                 child: Name(),
               ),
               Positioned(
                 top: 160,
-                right: 52,
+                right: 40,
                 child: TitleCircle(),
               ),
             ],
