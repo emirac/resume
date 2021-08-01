@@ -4,7 +4,6 @@ import 'package:resume/widgtes/about/name.dart';
 import 'package:resume/widgtes/about/skill_card.dart';
 import 'package:resume/widgtes/about/title.dart';
 import 'package:resume/widgtes/common/animated_page_divider.dart';
-import 'package:resume/widgtes/common/page_decorators/right_decorator.dart';
 
 class AboutPageLarge extends StatelessWidget {
   @override

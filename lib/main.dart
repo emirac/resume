@@ -66,7 +66,7 @@ class MyAppPage extends StatelessWidget {
                     physics: BouncingScrollPhysics(),
                     child: Padding(
                       padding: EdgeInsets.only(
-                        right: 24,
+                        right: 46,
                       ),
                       child: Column(
                         children: [

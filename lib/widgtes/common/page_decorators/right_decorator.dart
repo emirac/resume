@@ -10,7 +10,7 @@ class RightDecorator extends StatelessWidget {
     return Stack(
       children: [
         Padding(
-          padding: EdgeInsets.only(right: 36, left: 8),
+          padding: EdgeInsets.only(right: 32, left: 8),
           child: Container(
             width: 1,
             height: height,
