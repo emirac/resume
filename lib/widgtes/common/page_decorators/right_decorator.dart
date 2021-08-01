@@ -17,32 +17,33 @@ class RightDecorator extends StatelessWidget {
             color: Theme.of(context).highlightColor,
           ),
         ),
-        Positioned(
-          child: AnimatedDiamond(color: Theme.of(context).primaryColor),
-          top: 150,
-          right: 30,
-        ),
-        Positioned(
-          child: Diamond(
-            color: Theme.of(context).accentColor,
+        Container(
+          height: height,
+          padding: EdgeInsets.only(left: 2),
+          child: Column(
+            children: [
+              Spacer(),
+              AnimatedDiamond(
+                color: Theme.of(context).primaryColor,
+              ),
+              Spacer(
+                flex: 4,
+              ),
+              Diamond(
+                color: Theme.of(context).accentColor,
+              ),
+              Diamond(
+                color: Theme.of(context).accentColor,
+              ),
+              Diamond(
+                color: Theme.of(context).accentColor,
+              ),
+              Spacer(
+                flex: 2,
+              ),
+            ],
           ),
-          top: 720,
-          right: 30,
         ),
-        Positioned(
-          child: Diamond(
-            color: Theme.of(context).accentColor,
-          ),
-          top: 732,
-          right: 30,
-        ),
-        Positioned(
-          child: Diamond(
-            color: Theme.of(context).accentColor,
-          ),
-          top: 744,
-          right: 30,
-        )
       ],
     );
   }
