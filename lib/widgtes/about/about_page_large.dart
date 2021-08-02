@@ -86,6 +86,7 @@ class AboutSkills extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
+            flex: 4,
             child: Column(
               children: [
                 Text('Backend tools and technologies:'),
@@ -111,10 +112,9 @@ class AboutSkills extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            width: ScreenSizeHelper.getLargePageSizing(110, width),
-          ),
+          Spacer(),
           Expanded(
+            flex: 4,
             child: Column(
               children: [
                 Text('Frontend tools and technologies:'),
@@ -142,10 +142,9 @@ class AboutSkills extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            width: ScreenSizeHelper.getLargePageSizing(110, width),
-          ),
+          Spacer(),
           Expanded(
+            flex: 3,
             child: Column(
               children: [
                 SizedBox(
@@ -194,7 +193,11 @@ class SkillBulletPoint extends StatelessWidget {
           SizedBox(
             width: 8,
           ),
-          Text(this.item)
+          Flexible(
+            child: Text(
+              this.item,
+            ),
+          ),
         ],
       ),
     );
