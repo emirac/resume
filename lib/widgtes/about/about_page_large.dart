@@ -98,6 +98,7 @@ class AboutSkills extends StatelessWidget {
                     maxHeight: 400,
                   ),
                   child: GridView.count(
+                    childAspectRatio: 12 / 11,
                     crossAxisCount:
                         ScreenSizeHelper.getLargePageGridCount(3, width),
                     children: [
@@ -126,8 +127,7 @@ class AboutSkills extends StatelessWidget {
                     maxHeight: 400,
                   ),
                   child: GridView.count(
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 12,
+                    childAspectRatio: 12 / 11,
                     crossAxisCount:
                         ScreenSizeHelper.getLargePageGridCount(3, width),
                     children: [
