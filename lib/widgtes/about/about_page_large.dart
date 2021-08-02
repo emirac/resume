@@ -83,11 +83,12 @@ class AboutSkills extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(32),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 4,
-            child: Column(
+      child: Container(
+        width: width,
+        child: Wrap(
+          alignment: WrapAlignment.spaceAround,
+          children: [
+            Column(
               children: [
                 Text('Backend tools and technologies:'),
                 SizedBox(
@@ -95,12 +96,12 @@ class AboutSkills extends StatelessWidget {
                 ),
                 Container(
                   constraints: BoxConstraints(
-                    maxHeight: 400,
+                    maxHeight: 350,
+                    maxWidth: 380,
                   ),
                   child: GridView.count(
-                    childAspectRatio: 12 / 11,
-                    crossAxisCount:
-                        ScreenSizeHelper.getLargePageGridCount(3, width),
+                    childAspectRatio: 1 / 1,
+                    crossAxisCount: 3,
                     children: [
                       SkillProgressIndicator('.NET', 0.5),
                       SkillProgressIndicator('MS SQL', 0.7),
@@ -112,11 +113,7 @@ class AboutSkills extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          Spacer(),
-          Expanded(
-            flex: 4,
-            child: Column(
+            Column(
               children: [
                 Text('Frontend tools and technologies:'),
                 SizedBox(
@@ -124,12 +121,12 @@ class AboutSkills extends StatelessWidget {
                 ),
                 Container(
                   constraints: BoxConstraints(
-                    maxHeight: 400,
+                    maxHeight: 350,
+                    maxWidth: 380,
                   ),
                   child: GridView.count(
-                    childAspectRatio: 12 / 11,
-                    crossAxisCount:
-                        ScreenSizeHelper.getLargePageGridCount(3, width),
+                    childAspectRatio: 1 / 1,
+                    crossAxisCount: 3,
                     children: [
                       SkillProgressIndicator('Flutter', 0.3),
                       SkillProgressIndicator('Typescript', 0.5),
@@ -141,11 +138,7 @@ class AboutSkills extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          Spacer(),
-          Expanded(
-            flex: 3,
-            child: Column(
+            Column(
               children: [
                 SizedBox(
                   height: 12,
@@ -155,7 +148,10 @@ class AboutSkills extends StatelessWidget {
                   height: 24,
                 ),
                 Container(
-                  constraints: BoxConstraints(maxHeight: 400),
+                  constraints: BoxConstraints(
+                    maxHeight: 350,
+                    maxWidth: 350,
+                  ),
                   child: Column(
                     children: [
                       SkillBulletPoint('Design patterns'),
@@ -169,8 +165,8 @@ class AboutSkills extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

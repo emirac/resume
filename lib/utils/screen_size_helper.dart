@@ -15,9 +15,9 @@ class ScreenSizeHelper {
     if (width >= 1990) {
       return padding;
     } else if (width >= 1200) {
-      return padding * 0.77;
+      return padding * 0.8;
     } else {
-      return padding * 0.70;
+      return padding * 0.74;
     }
   }
 
@@ -28,14 +28,6 @@ class ScreenSizeHelper {
       return padding * 0.64;
     } else {
       return padding * 0.46;
-    }
-  }
-
-  static getLargePageGridCount(int count, double width) {
-    if (width > 1300) {
-      return count;
-    } else {
-      return count - 1;
     }
   }
 }

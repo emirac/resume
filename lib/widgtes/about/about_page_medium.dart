@@ -70,96 +70,85 @@ class AboutPageMedium extends StatelessWidget {
           child: Wrap(
             alignment: WrapAlignment.center,
             children: [
-              Expanded(
-                flex: 3,
-                child: Column(
-                  children: [
-                    Text('Backend tools and technologies:'),
-                    SizedBox(
-                      height: 12,
+              Column(
+                children: [
+                  Text('Backend tools and technologies:'),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Container(
+                    constraints: BoxConstraints(
+                      minHeight: 280,
+                      maxHeight: 320,
+                      maxWidth: 350,
                     ),
-                    Container(
-                      constraints: BoxConstraints(
-                        minHeight: 320,
-                        maxHeight: 400,
-                        maxWidth: 350,
-                      ),
-                      child: GridView.count(
-                        childAspectRatio: 3 / 2,
-                        crossAxisCount:
-                            ScreenSizeHelper.getLargePageGridCount(3, width),
-                        children: [
-                          SkillProgressIndicator('.NET', 0.5),
-                          SkillProgressIndicator('MS SQL', 0.7),
-                          SkillProgressIndicator('C#', 0.75),
-                          SkillProgressIndicator('Azure', 0.75),
-                          SkillProgressIndicator('Entity Framework', 0.75),
-                        ],
-                      ),
+                    child: GridView.count(
+                      childAspectRatio: 1 / 1,
+                      crossAxisCount: 3,
+                      children: [
+                        SkillProgressIndicator('.NET', 0.5),
+                        SkillProgressIndicator('MS SQL', 0.7),
+                        SkillProgressIndicator('C#', 0.75),
+                        SkillProgressIndicator('Azure', 0.75),
+                        SkillProgressIndicator('Entity Framework', 0.75),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Expanded(
-                flex: 3,
-                child: Column(
-                  children: [
-                    Text('Frontend tools and technologies:'),
-                    SizedBox(
-                      height: 12,
+              Column(
+                children: [
+                  Text('Frontend tools and technologies:'),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Container(
+                    constraints: BoxConstraints(
+                      minHeight: 280,
+                      maxHeight: 320,
+                      maxWidth: 350,
                     ),
-                    Container(
-                      constraints: BoxConstraints(
-                        minHeight: 320,
-                        maxHeight: 400,
-                        maxWidth: 350,
-                      ),
-                      child: GridView.count(
-                        childAspectRatio: 3 / 2,
-                        crossAxisCount:
-                            ScreenSizeHelper.getLargePageGridCount(3, width),
-                        children: [
-                          SkillProgressIndicator('Flutter', 0.3),
-                          SkillProgressIndicator('Typescript', 0.5),
-                          SkillProgressIndicator('Vue.js', 0.8),
-                          SkillProgressIndicator('Angular', 0.6),
-                          SkillProgressIndicator('Javascript', 0.85),
-                        ],
-                      ),
+                    child: GridView.count(
+                      childAspectRatio: 1 / 1,
+                      crossAxisCount: 3,
+                      children: [
+                        SkillProgressIndicator('Flutter', 0.3),
+                        SkillProgressIndicator('Typescript', 0.5),
+                        SkillProgressIndicator('Vue.js', 0.8),
+                        SkillProgressIndicator('Angular', 0.6),
+                        SkillProgressIndicator('Javascript', 0.85),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              Expanded(
-                flex: 3,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 12,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Text('Other knowledge:'),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Container(
+                    constraints: BoxConstraints(
+                      maxHeight: 300,
+                      maxWidth: 350,
                     ),
-                    Text('Other knowledge:'),
-                    SizedBox(
-                      height: 24,
+                    child: Column(
+                      children: [
+                        SkillBulletPoint('Design patterns'),
+                        SkillBulletPoint('Agile'),
+                        SkillBulletPoint('Object-oriented programming'),
+                        SkillBulletPoint('Test-driven development'),
+                        SkillBulletPoint('CQRS'),
+                        SkillBulletPoint('Clean Architecture'),
+                      ],
                     ),
-                    Container(
-                      constraints: BoxConstraints(
-                        maxHeight: 300,
-                        maxWidth: 350,
-                      ),
-                      child: Column(
-                        children: [
-                          SkillBulletPoint('Design patterns'),
-                          SkillBulletPoint('Agile'),
-                          SkillBulletPoint('Object-oriented programming'),
-                          SkillBulletPoint('Test-driven development'),
-                          SkillBulletPoint('CQRS'),
-                          SkillBulletPoint('Clean Architecture'),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),

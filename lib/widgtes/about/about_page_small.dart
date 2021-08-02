@@ -49,9 +49,6 @@ class AboutPageSmall extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(16),
               ),
-              // AnimatedPageDivider(
-              //   color: Theme.of(context).accentColor,
-              // ),
               SizedBox(
                 height: 36,
               ),
@@ -61,13 +58,13 @@ class AboutPageSmall extends StatelessWidget {
               ),
               Container(
                 constraints: BoxConstraints(
-                  minHeight: 320,
-                  maxHeight: 400,
+                  minHeight: 250,
+                  maxHeight: 300,
                   maxWidth: 350,
                 ),
                 child: GridView.count(
-                  childAspectRatio: 3 / 2,
-                  crossAxisCount: 2,
+                  childAspectRatio: 1 / 1,
+                  crossAxisCount: 3,
                   children: [
                     SkillProgressIndicator('.NET', 0.5),
                     SkillProgressIndicator('MS SQL', 0.7),
@@ -86,13 +83,13 @@ class AboutPageSmall extends StatelessWidget {
               ),
               Container(
                 constraints: BoxConstraints(
-                  minHeight: 320,
-                  maxHeight: 400,
+                  minHeight: 250,
+                  maxHeight: 300,
                   maxWidth: 350,
                 ),
                 child: GridView.count(
-                  childAspectRatio: 3 / 2,
-                  crossAxisCount: 2,
+                  childAspectRatio: 1 / 1,
+                  crossAxisCount: 3,
                   children: [
                     SkillProgressIndicator('Flutter', 0.3),
                     SkillProgressIndicator('Typescript', 0.5),
@@ -111,8 +108,8 @@ class AboutPageSmall extends StatelessWidget {
               ),
               Container(
                 constraints: BoxConstraints(
-                  maxHeight: 300,
-                  maxWidth: 350,
+                  maxHeight: 230,
+                  maxWidth: 250,
                 ),
                 child: Column(
                   children: [
