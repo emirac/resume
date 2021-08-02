@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:resume/widgtes/about/name_small.dart';
 import 'package:resume/widgtes/about/skill_card.dart';
+import 'package:resume/widgtes/about/skill_progress_indicator.dart';
 import 'package:resume/widgtes/about/title_small.dart';
 import 'package:resume/widgtes/common/animated_page_divider.dart';
+
+import 'about_page_large.dart';
 
 class AboutPageSmall extends StatelessWidget {
   @override
@@ -46,21 +49,81 @@ class AboutPageSmall extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(16),
               ),
-              AnimatedPageDivider(
-                color: Theme.of(context).accentColor,
-              ),
+              // AnimatedPageDivider(
+              //   color: Theme.of(context).accentColor,
+              // ),
               SizedBox(
                 height: 36,
               ),
-              SkillCard('Flutter', 3),
-              SkillCard('.NET', 5),
-              SkillCard('Vue.js', 8),
-              SkillCard('SQL', 7),
-              SkillCard('Angular', 6),
-              SkillCard('C#', 6),
-              SkillCard('Javascript', 8),
+              Text('Backend tools and technologies:'),
               SizedBox(
-                height: 36,
+                height: 12,
+              ),
+              Container(
+                constraints: BoxConstraints(
+                  minHeight: 320,
+                  maxHeight: 400,
+                  maxWidth: 350,
+                ),
+                child: GridView.count(
+                  childAspectRatio: 3 / 2,
+                  crossAxisCount: 2,
+                  children: [
+                    SkillProgressIndicator('.NET', 0.5),
+                    SkillProgressIndicator('MS SQL', 0.7),
+                    SkillProgressIndicator('C#', 0.75),
+                    SkillProgressIndicator('Azure', 0.75),
+                    SkillProgressIndicator('Entity Framework', 0.75),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Text('Frontend tools and technologies:'),
+              SizedBox(
+                height: 12,
+              ),
+              Container(
+                constraints: BoxConstraints(
+                  minHeight: 320,
+                  maxHeight: 400,
+                  maxWidth: 350,
+                ),
+                child: GridView.count(
+                  childAspectRatio: 3 / 2,
+                  crossAxisCount: 2,
+                  children: [
+                    SkillProgressIndicator('Flutter', 0.3),
+                    SkillProgressIndicator('Typescript', 0.5),
+                    SkillProgressIndicator('Vue.js', 0.8),
+                    SkillProgressIndicator('Angular', 0.6),
+                    SkillProgressIndicator('Javascript', 0.85),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Text('Other knowledge:'),
+              SizedBox(
+                height: 24,
+              ),
+              Container(
+                constraints: BoxConstraints(
+                  maxHeight: 300,
+                  maxWidth: 350,
+                ),
+                child: Column(
+                  children: [
+                    SkillBulletPoint('Design patterns'),
+                    SkillBulletPoint('Agile'),
+                    SkillBulletPoint('Object-oriented programming'),
+                    SkillBulletPoint('Test-driven development'),
+                    SkillBulletPoint('CQRS'),
+                    SkillBulletPoint('Clean Architecture'),
+                  ],
+                ),
               ),
             ],
           ),
