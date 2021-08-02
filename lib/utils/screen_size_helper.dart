@@ -40,4 +40,12 @@ class ScreenSizeHelper {
       return padding * 0.46;
     }
   }
+
+  static getLargePageGridCount(int count, double width) {
+    if (width > 1300) {
+      return count;
+    } else {
+      return count - 1;
+    }
+  }
 }
