@@ -8,8 +8,8 @@ class Name extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return new Container(
-      width: ScreenSizeHelper.getLargePageSizing2(280, width),
-      height: ScreenSizeHelper.getLargePageSizing2(280, width),
+      width: ScreenSizeHelper.getLargePageSizing(280, width),
+      height: ScreenSizeHelper.getLargePageSizing(280, width),
       decoration: new BoxDecoration(
         color: Theme.of(context).primaryColor,
         shape: BoxShape.circle,

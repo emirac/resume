@@ -11,23 +11,13 @@ class ScreenSizeHelper {
     }
   }
 
-  static getLargePageSizing(int padding, double width) {
-    if (width >= 1990) {
-      return padding;
-    } else if (width >= 1100) {
-      return padding * 0.60;
-    } else {
-      return padding * 0.56;
-    }
-  }
-
-  static getLargePageSizing2(double padding, double width) {
+  static getLargePageSizing(double padding, double width) {
     if (width >= 1990) {
       return padding;
     } else if (width >= 1200) {
-      return padding * 0.83;
+      return padding * 0.77;
     } else {
-      return padding * 0.75;
+      return padding * 0.70;
     }
   }
 

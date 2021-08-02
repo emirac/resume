@@ -7,8 +7,8 @@ class TitleCircle extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return new Container(
-      width: ScreenSizeHelper.getLargePageSizing2(215, width),
-      height: ScreenSizeHelper.getLargePageSizing2(215, width),
+      width: ScreenSizeHelper.getLargePageSizing(215, width),
+      height: ScreenSizeHelper.getLargePageSizing(215, width),
       decoration: new BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(color: Theme.of(context).accentColor),

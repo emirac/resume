@@ -59,13 +59,13 @@ class AboutDescription extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned(
-                  top: ScreenSizeHelper.getLargePageSizing2(64, width),
-                  right: ScreenSizeHelper.getLargePageSizing2(125, width),
+                  top: ScreenSizeHelper.getLargePageSizing(64, width),
+                  right: ScreenSizeHelper.getLargePageSizing(125, width),
                   child: Name(),
                 ),
                 Positioned(
-                  top: ScreenSizeHelper.getLargePageSizing2(265, width),
-                  right: ScreenSizeHelper.getLargePageSizing2(36, width),
+                  top: ScreenSizeHelper.getLargePageSizing(265, width),
+                  right: ScreenSizeHelper.getLargePageSizing(36, width),
                   child: TitleCircle(),
                 ),
               ],
@@ -112,7 +112,7 @@ class AboutSkills extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: ScreenSizeHelper.getLargePageSizing(115, width),
+            width: ScreenSizeHelper.getLargePageSizing(110, width),
           ),
           Expanded(
             child: Column(
@@ -143,7 +143,7 @@ class AboutSkills extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: ScreenSizeHelper.getLargePageSizing(115, width),
+            width: ScreenSizeHelper.getLargePageSizing(110, width),
           ),
           Expanded(
             child: Column(
