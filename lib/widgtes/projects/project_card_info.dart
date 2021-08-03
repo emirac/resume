@@ -9,10 +9,13 @@ class ProjectCardInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[200],
       height: 350,
       width: 350,
       padding: EdgeInsets.all(8),
+      decoration: new BoxDecoration(
+        borderRadius: BorderRadius.circular(175),
+        color: Colors.grey[200],
+      ),
       child: SizedBox(
         height: 350,
         width: 350,
@@ -28,14 +31,17 @@ class ProjectCardInfo extends StatelessWidget {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  ProjectCardLink(
-                      'Code', projects.selectedProject?.codeURL ?? ''),
-                  ProjectCardLink(
-                      'See live', projects.selectedProject?.demoURL ?? ''),
-                ],
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ProjectCardLink(
+                        'Code', projects.selectedProject?.codeURL ?? ''),
+                    ProjectCardLink(
+                        'See live', projects.selectedProject?.demoURL ?? ''),
+                  ],
+                ),
               )
             ],
           ),

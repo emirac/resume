@@ -8,14 +8,13 @@ import 'package:resume/widgtes/projects/project_card_minified.dart';
 class ProjectsPageMediumSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 64,
-            bottom: 64,
-          ),
-          child: Consumer<ProjectsProvider>(
+    double height = MediaQuery.of(context).size.height;
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: height),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Consumer<ProjectsProvider>(
             builder: (_, ProjectsProvider projects, __) => MouseRegion(
               cursor: SystemMouseCursors.grab,
               child: CarouselSlider(
@@ -41,9 +40,12 @@ class ProjectsPageMediumSmall extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        ProjectCardMediumSmall(),
-      ],
+          SizedBox(
+            height: 32,
+          ),
+          ProjectCardMediumSmall(),
+        ],
+      ),
     );
   }
 }

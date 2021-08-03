@@ -9,43 +9,46 @@ class ProjectsPageLarge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    return SizedBox(
-      height: height,
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: height,
+      ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 64,
-              bottom: 120,
-            ),
-            child: Consumer<ProjectsProvider>(
-              builder: (_, ProjectsProvider projects, __) => MouseRegion(
-                cursor: SystemMouseCursors.grab,
-                child: CarouselSlider(
-                  items: [
-                    ...projects.projects
-                        .map((d) => ProjectCardMinified(d.projectName))
-                        .toList()
-                  ],
-                  options: CarouselOptions(
-                    height: 85,
-                    aspectRatio: 2 / 3,
-                    viewportFraction: 0.15,
-                    initialPage: 0,
-                    enableInfiniteScroll: false,
-                    reverse: false,
-                    autoPlay: false,
-                    enlargeCenterPage: true,
-                    onPageChanged:
-                        (int index, CarouselPageChangedReason reason) =>
-                            projects.setSelectedProject(index),
-                    scrollDirection: Axis.horizontal,
-                  ),
+          Consumer<ProjectsProvider>(
+            builder: (_, ProjectsProvider projects, __) => MouseRegion(
+              cursor: SystemMouseCursors.grab,
+              child: CarouselSlider(
+                items: [
+                  ...projects.projects
+                      .map((d) => ProjectCardMinified(d.projectName))
+                      .toList()
+                ],
+                options: CarouselOptions(
+                  height: 85,
+                  aspectRatio: 2 / 3,
+                  viewportFraction: 0.15,
+                  initialPage: 0,
+                  enableInfiniteScroll: false,
+                  reverse: false,
+                  autoPlay: false,
+                  enlargeCenterPage: true,
+                  onPageChanged:
+                      (int index, CarouselPageChangedReason reason) =>
+                          projects.setSelectedProject(index),
+                  scrollDirection: Axis.horizontal,
                 ),
               ),
             ),
           ),
+          SizedBox(
+            height: 32,
+          ),
           ProjectCardLarge(),
+          SizedBox(
+            height: 120,
+          )
         ],
       ),
     );

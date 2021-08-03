@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume/widgtes/about/name_small.dart';
-import 'package:resume/widgtes/about/skill_card.dart';
 import 'package:resume/widgtes/about/skill_progress_indicator.dart';
 import 'package:resume/widgtes/about/title_small.dart';
-import 'package:resume/widgtes/common/animated_page_divider.dart';
 
 import 'about_page_large.dart';
 

@@ -13,28 +13,36 @@ class ProjectCardLarge extends StatelessWidget {
       constraints: BoxConstraints(
         minWidth: width,
         maxWidth: width,
-        maxHeight: 350,
+        // maxHeight: 350,
       ),
       child: Consumer<ProjectsProvider>(
         builder: (_, ProjectsProvider projects, __) => Container(
-          height: 350,
           width: width,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisSize: MainAxisSize.max,
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            alignment: WrapAlignment.center,
+            spacing: 24,
+            runSpacing: 24,
             children: [
-              Flexible(child: ProjectCardInfo()),
+              Container(
+                constraints: BoxConstraints(minWidth: 350),
+                child: ProjectCardInfo(),
+              ),
               SizedBox(
                 width: 32,
               ),
-              if (projects.selectedProject?.images.isNotEmpty ?? false)
-                Flexible(child: ProjectCardImage()),
-              if (projects.selectedProject?.images.isNotEmpty ?? false)
-                SizedBox(
-                  width: 32,
-                ),
-              Flexible(child: ProjectCardTechnologies()),
+              Wrap(
+                runSpacing: 32,
+                children: [
+                  if (projects.selectedProject?.images.isNotEmpty ?? false)
+                    ProjectCardImage(),
+                  if (projects.selectedProject?.images.isNotEmpty ?? false)
+                    SizedBox(
+                      width: 36,
+                    ),
+                  ProjectCardTechnologies(),
+                ],
+              )
             ],
           ),
         ),

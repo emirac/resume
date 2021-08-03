@@ -12,15 +12,18 @@ class ProjectCardMediumSmall extends StatelessWidget {
       builder: (_, ProjectsProvider projects, __) => Column(
         children: [
           Wrap(
-            spacing: 16,
-            runSpacing: 16,
-            direction: Axis.horizontal,
+            runSpacing: 24,
             alignment: WrapAlignment.center,
             children: [
               ProjectCardInfo(),
-              if (projects.selectedProject?.images.isNotEmpty ?? false)
-                ProjectCardImage(),
-              ProjectCardTechnologies(),
+              Wrap(
+                runSpacing: 24,
+                children: [
+                  if (projects.selectedProject?.images.isNotEmpty ?? false)
+                    ProjectCardImage(),
+                  ProjectCardTechnologies(),
+                ],
+              )
             ],
           ),
           SizedBox(
