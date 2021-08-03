@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/widgtes/about/name.dart';
 import 'package:resume/widgtes/about/skill_progress_indicator.dart';
 import 'package:resume/widgtes/about/title.dart';
@@ -59,14 +58,14 @@ class AboutDescription extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned(
-                  top: ScreenSizeHelper.getLargePageSizing(64, width),
-                  right: ScreenSizeHelper.getLargePageSizing(125, width),
-                  child: Name(),
+                  top: 64,
+                  right: 125,
+                  child: Name(230),
                 ),
                 Positioned(
-                  top: ScreenSizeHelper.getLargePageSizing(265, width),
-                  right: ScreenSizeHelper.getLargePageSizing(36, width),
-                  child: TitleCircle(),
+                  top: 225,
+                  right: 36,
+                  child: TitleCircle(175),
                 ),
               ],
             ),

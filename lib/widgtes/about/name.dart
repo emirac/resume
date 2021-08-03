@@ -3,13 +3,16 @@ import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/widgtes/common/diamond.dart';
 
 class Name extends StatelessWidget {
+  final double size;
+
+  Name(this.size);
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
 
     return new Container(
-      width: ScreenSizeHelper.getLargePageSizing(280, width),
-      height: ScreenSizeHelper.getLargePageSizing(280, width),
+      width: this.size, // ScreenSizeHelper.getLargePageSizing(280, width),
+      height: this.size, // ScreenSizeHelper.getLargePageSizing(280, width),
       decoration: new BoxDecoration(
         color: Theme.of(context).primaryColor,
         shape: BoxShape.circle,
