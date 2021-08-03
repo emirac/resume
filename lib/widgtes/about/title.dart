@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:resume/utils/screen_size_helper.dart';
 
 class TitleCircle extends StatelessWidget {
   final double size;
@@ -7,11 +6,9 @@ class TitleCircle extends StatelessWidget {
   TitleCircle(this.size);
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-
     return new Container(
-      width: this.size, // ScreenSizeHelper.getLargePageSizing(215, width),
-      height: this.size, // ScreenSizeHelper.getLargePageSizing(215, width),
+      width: this.size,
+      height: this.size,
       decoration: new BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(color: Theme.of(context).accentColor),
