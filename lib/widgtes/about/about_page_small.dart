@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:resume/pages/about_page.dart';
 import 'package:resume/widgtes/about/name_small.dart';
-import 'package:resume/widgtes/about/skill_progress_indicator.dart';
 import 'package:resume/widgtes/about/title_small.dart';
-
-import 'about_page_large.dart';
 
 class AboutPageSmall extends StatelessWidget {
   @override
@@ -63,13 +61,7 @@ class AboutPageSmall extends StatelessWidget {
                 child: GridView.count(
                   childAspectRatio: 1 / 1,
                   crossAxisCount: 3,
-                  children: [
-                    SkillProgressIndicator('.NET', 0.5),
-                    SkillProgressIndicator('MS SQL', 0.7),
-                    SkillProgressIndicator('C#', 0.75),
-                    SkillProgressIndicator('Azure', 0.75),
-                    SkillProgressIndicator('Entity Framework', 0.75),
-                  ],
+                  children: [...backendSkils],
                 ),
               ),
               SizedBox(
@@ -88,13 +80,7 @@ class AboutPageSmall extends StatelessWidget {
                 child: GridView.count(
                   childAspectRatio: 1 / 1,
                   crossAxisCount: 3,
-                  children: [
-                    SkillProgressIndicator('Flutter', 0.3),
-                    SkillProgressIndicator('Typescript', 0.5),
-                    SkillProgressIndicator('Vue.js', 0.8),
-                    SkillProgressIndicator('Angular', 0.6),
-                    SkillProgressIndicator('Javascript', 0.85),
-                  ],
+                  children: [...frontendSkills],
                 ),
               ),
               SizedBox(
@@ -110,14 +96,7 @@ class AboutPageSmall extends StatelessWidget {
                   maxWidth: 250,
                 ),
                 child: Column(
-                  children: [
-                    SkillBulletPoint('Design patterns'),
-                    SkillBulletPoint('Agile'),
-                    SkillBulletPoint('Object-oriented programming'),
-                    SkillBulletPoint('Test-driven development'),
-                    SkillBulletPoint('CQRS'),
-                    SkillBulletPoint('Clean Architecture'),
-                  ],
+                  children: [...otherSkills],
                 ),
               ),
             ],
