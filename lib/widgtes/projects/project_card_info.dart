@@ -112,7 +112,7 @@ class ProjectCardLink extends StatelessWidget {
             ),
           ),
           onTap: () => {
-            if (this.link.length > 0) {html.window.open(this.link, 'new tab')}
+            if (this.link.length > 0) {html.window.open(this.link, '_blank')}
           },
         ),
       ),
