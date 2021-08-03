@@ -36,19 +36,19 @@ class AboutPage extends StatelessWidget {
 }
 
 var backendSkils = [
-  SkillProgressIndicator('.NET', 0.5),
-  SkillProgressIndicator('MS SQL', 0.7),
-  SkillProgressIndicator('C#', 0.75),
-  SkillProgressIndicator('Azure', 0.75),
-  SkillProgressIndicator('Entity Framework', 0.75),
+  SkillProgressIndicator('.NET', 0.8),
+  SkillProgressIndicator('MS SQL', 0.85),
+  SkillProgressIndicator('C#', 0.8),
+  SkillProgressIndicator('Azure', 0.55),
+  SkillProgressIndicator('Entity Framework', 0.85),
 ];
 
 var frontendSkills = [
-  SkillProgressIndicator('Flutter', 0.3),
-  SkillProgressIndicator('Typescript', 0.5),
-  SkillProgressIndicator('Vue.js', 0.8),
-  SkillProgressIndicator('Angular', 0.6),
-  SkillProgressIndicator('Javascript', 0.85),
+  SkillProgressIndicator('Flutter', 0.25),
+  SkillProgressIndicator('Typescript', 0.9),
+  SkillProgressIndicator('Vue.js', 0.85),
+  SkillProgressIndicator('Angular', 0.5),
+  SkillProgressIndicator('Javascript', 0.9),
 ];
 
 var otherSkills = [

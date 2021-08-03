@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:resume/providers/menu_provider.dart';
 import 'package:resume/utils/pages.dart';
+import 'package:resume/widgtes/common/animated_diamond.dart';
 import 'package:resume/widgtes/common/diamond.dart';
+import 'package:resume/widgtes/common/rotating_diamond.dart';
 
 class MenuItem extends StatelessWidget {
   final Pages page;
@@ -50,20 +52,18 @@ class MenuItem extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Diamond(
-                    color: menu.activeRoute == this.page
-                        ? Theme.of(context).primaryColor
-                        : Colors.transparent),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Diamond(
-                    color: menu.activeRoute == this.page
-                        ? Theme.of(context).primaryColor
-                        : Colors.transparent),
-              ),
+              if (menu.activeRoute == this.page)
+                Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: RotatingDiamond(
+                      color: Theme.of(context).primaryColor,
+                    )),
+              if (menu.activeRoute == this.page)
+                Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: RotatingDiamond(
+                      color: Theme.of(context).primaryColor,
+                    )),
             ],
           ),
         ),
