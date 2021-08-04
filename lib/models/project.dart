@@ -1,6 +1,6 @@
 class Project {
   final String projectName;
-  final String description;
+  final List<String> description;
   final String? codeURL;
   final String? demoURL;
   final List<String> images;
@@ -8,7 +8,7 @@ class Project {
 
   Project({
     this.projectName = '',
-    this.description = '',
+    this.description = const [],
     this.technologies = const [],
     this.images = const [],
     this.codeURL,

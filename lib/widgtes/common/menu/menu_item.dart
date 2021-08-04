@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:resume/providers/menu_provider.dart';
 import 'package:resume/utils/pages.dart';
-import 'package:resume/widgtes/common/animated_diamond.dart';
-import 'package:resume/widgtes/common/diamond.dart';
 import 'package:resume/widgtes/common/rotating_diamond.dart';
 
 class MenuItem extends StatelessWidget {
@@ -54,16 +52,14 @@ class MenuItem extends StatelessWidget {
               ),
               if (menu.activeRoute == this.page)
                 Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: RotatingDiamond(
-                      color: Theme.of(context).primaryColor,
-                    )),
+                  padding: const EdgeInsets.all(4.0),
+                  child: RotatingDiamond(),
+                ),
               if (menu.activeRoute == this.page)
                 Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: RotatingDiamond(
-                      color: Theme.of(context).primaryColor,
-                    )),
+                  padding: const EdgeInsets.all(4.0),
+                  child: RotatingDiamond(),
+                ),
             ],
           ),
         ),

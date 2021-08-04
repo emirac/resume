@@ -37,7 +37,7 @@ class _RotatingDiamond extends State<RotatingDiamond>
       animation: _controller,
       builder: (_, child) {
         return Transform.rotate(
-          angle: _controller.value * pi,
+          angle: _controller.value * pi / 2,
           child: child,
         );
       },

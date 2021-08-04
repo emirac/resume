@@ -19,7 +19,7 @@ class ProjectCardTechnologies extends StatelessWidget {
         child: Consumer<ProjectsProvider>(
           builder: (_, ProjectsProvider projects, __) => Column(
             children: [
-              ProjectCardTitle('technologies'),
+              ProjectCardTitle('Stack'),
               Container(
                 padding: EdgeInsets.all(32),
                 child: Column(

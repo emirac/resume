@@ -6,6 +6,41 @@ import 'package:resume/providers/projects_provider.dart';
 import 'package:resume/widgtes/projects/project_card_title.dart';
 
 class ProjectCardInfo extends StatelessWidget {
+  List<Widget> getText(List<String> description) {
+    List<Widget> widgets = [];
+
+    for (var i = 0; i < description.length; i++) {
+      if (i == 0 || i == description.length - 1) {
+        widgets.add(
+          Padding(
+            padding: EdgeInsets.only(
+              right: 6,
+              left: 6,
+            ),
+            child: Text(
+              description[i],
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.grey[500],
+              ),
+            ),
+          ),
+        );
+      } else {
+        widgets.add(
+          Text(
+            description[i],
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.grey[500],
+            ),
+          ),
+        );
+      }
+    }
+    return widgets;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,17 +57,21 @@ class ProjectCardInfo extends StatelessWidget {
         child: Consumer<ProjectsProvider>(
           builder: (_, ProjectsProvider projects, __) => Column(
             children: [
+              SizedBox(height: 18),
               ProjectCardTitle(projects.selectedProject?.projectName ?? ''),
               Expanded(
-                child: Text(
-                  projects.selectedProject?.description ?? '',
-                  style: TextStyle(
-                    color: Theme.of(context).accentColor,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      top: 8, bottom: 8, left: 24, right: 24),
+                  child: Column(
+                    children: [
+                      ...getText(projects.selectedProject!.description)
+                    ],
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
