@@ -46,9 +46,16 @@ class ProjectCardImage extends StatelessWidget {
                           mouseCursor: SystemMouseCursors.click,
                           onTap: () =>
                               projects.setSelectedImage(Direction.Back),
-                          child: Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
+                          child: Container(
+                            padding: EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                              color: new Color.fromRGBO(0, 0, 0, 0.5),
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                         top: 350 / 2,
@@ -59,9 +66,16 @@ class ProjectCardImage extends StatelessWidget {
                           mouseCursor: SystemMouseCursors.click,
                           onTap: () =>
                               projects.setSelectedImage(Direction.Forward),
-                          child: Icon(
-                            Icons.arrow_forward,
-                            color: Colors.white,
+                          child: Container(
+                            padding: EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                              color: new Color.fromRGBO(0, 0, 0, 0.5),
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            child: Icon(
+                              Icons.arrow_forward,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                         top: 350 / 2,

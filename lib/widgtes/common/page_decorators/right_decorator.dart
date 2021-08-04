@@ -32,8 +32,14 @@ class RightDecorator extends StatelessWidget {
               Diamond(
                 color: Theme.of(context).accentColor,
               ),
+              SizedBox(
+                height: 4,
+              ),
               Diamond(
                 color: Theme.of(context).accentColor,
+              ),
+              SizedBox(
+                height: 4,
               ),
               Diamond(
                 color: Theme.of(context).accentColor,
