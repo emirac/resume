@@ -19,7 +19,7 @@ class ProjectCardTitle extends StatelessWidget {
             this.title.toUpperCase(),
             style: TextStyle(
               color: Theme.of(context).primaryColor,
-              fontSize: 14,
+              fontSize: 12,
             ),
           ),
         ),

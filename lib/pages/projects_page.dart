@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:resume/utils/screen_size_helper.dart';
-import 'package:resume/utils/screen_sizes.dart';
 import 'package:resume/widgtes/common/page_divider.dart';
-import 'package:resume/widgtes/projects/projects_page_large.dart';
-import 'package:resume/widgtes/projects/projects_page_medium_small.dart';
+import 'package:resume/widgtes/projects/projects_card.dart';
+import 'package:resume/widgtes/projects/projects_carousel.dart';
 
 class ProjectsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    Widget widget;
-
-    switch (ScreenSizeHelper.getScreenSize(width)) {
-      case ScreenSizes.Large:
-        widget = ProjectsPageLarge();
-        break;
-      case ScreenSizes.Medium:
-      case ScreenSizes.Small:
-        widget = ProjectsPageMediumSmall();
-        break;
-    }
-
+    double height = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        widget,
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: height,
+          ),
+          child: Column(
+            children: [
+              ProjectsCarousel(),
+              ProjectsCarouselIndicator(),
+              ProjectCard(),
+            ],
+          ),
+        ),
         PageDivider(),
       ],
     );

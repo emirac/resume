@@ -1,10 +1,12 @@
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hovering/hovering.dart';
 import 'package:provider/provider.dart';
 import 'package:resume/providers/projects_provider.dart';
 
 class ProjectCardImage extends StatelessWidget {
+  final CarouselController _controller = CarouselController();
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
@@ -23,88 +25,59 @@ class ProjectCardImage extends StatelessWidget {
           children: [
             Consumer<ProjectsProvider>(
               builder: (_, ProjectsProvider projects, __) => Expanded(
-                child: HoverWidget(
-                  onHover: (event) => {},
+                child: MouseRegion(
+                  cursor: SystemMouseCursors.grab,
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      Image.asset(
-                        projects.selectedImage!,
-                        fit: BoxFit.fitHeight,
-                      ),
-                    ],
-                  ),
-                  hoverChild: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      Image.asset(
-                        projects.selectedImage!,
-                        fit: BoxFit.fitHeight,
-                      ),
-                      Positioned(
-                        child: InkWell(
-                          mouseCursor: SystemMouseCursors.click,
-                          onTap: () =>
-                              projects.setSelectedImage(Direction.Back),
-                          child: Container(
-                            padding: EdgeInsets.all(2),
-                            decoration: BoxDecoration(
-                              color: new Color.fromRGBO(0, 0, 0, 0.5),
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                            child: Icon(
-                              Icons.arrow_back,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        top: 350 / 2,
-                        left: 8,
+                      CarouselSlider(
+                        items: projects.selectedProject!.images
+                            .map(
+                              (image) => Image.asset(
+                                image,
+                                fit: BoxFit.fitHeight,
+                              ),
+                            )
+                            .toList(),
+                        options: CarouselOptions(
+                            enlargeCenterPage: false,
+                            height: 350,
+                            viewportFraction: 1,
+                            onPageChanged: (index, reason) =>
+                                projects.setSelectedImage(index)),
+                        carouselController: _controller,
                       ),
                       Positioned(
-                        child: InkWell(
-                          mouseCursor: SystemMouseCursors.click,
-                          onTap: () =>
-                              projects.setSelectedImage(Direction.Forward),
-                          child: Container(
-                            padding: EdgeInsets.all(2),
-                            decoration: BoxDecoration(
-                              color: new Color.fromRGBO(0, 0, 0, 0.5),
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                            child: Icon(
-                              Icons.arrow_forward,
-                              color: Colors.white,
-                            ),
-                          ),
+                        bottom: 8,
+                        right: 0,
+                        left: 0,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: projects.selectedProject!.images
+                              .asMap()
+                              .entries
+                              .map((entry) {
+                            return GestureDetector(
+                              onTap: () => _controller.animateToPage(entry.key),
+                              child: Container(
+                                width: 8,
+                                height: 8,
+                                margin: EdgeInsets.symmetric(
+                                    vertical: 8.0, horizontal: 4.0),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: (projects.selectImageIndex == entry.key
+                                      ? Theme.of(context).primaryColor
+                                      : Theme.of(context).highlightColor),
+                                ),
+                              ),
+                            );
+                          }).toList(),
                         ),
-                        top: 350 / 2,
-                        right: 8,
-                      ),
+                      )
                     ],
                   ),
                 ),
-                // items: [
-                //   ...projects.selectedProject!.images
-                //       .map((d) => Image.asset(
-                //             d,
-                //             fit: BoxFit.cover,
-                //           ))
-                //       .toList()
-                // ],
-                // options: CarouselOptions(
-                //   // height: 85,
-                //   // aspectRatio: 2 / 3,
-                //   viewportFraction: 1,
-                //   initialPage: 0,
-                //   enableInfiniteScroll: false,
-                //   reverse: false,
-                //   autoPlay: false,
-                //   enlargeCenterPage: false,
-                //   // onPageChanged: (int index, CarouselPageChangedReason reason) =>
-                //   //     projects.setSelectedProject(index),
-                //   scrollDirection: Axis.horizontal,
-                // ),
               ),
             ),
           ],

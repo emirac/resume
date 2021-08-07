@@ -4,7 +4,7 @@ import 'package:resume/models/project.dart';
 class ProjectsProvider extends ChangeNotifier {
   List<Project> projects = [];
   Project? selectedProject;
-  String? selectedImage;
+  int? selectImageIndex;
 
   ProjectsProvider() {
     setInitialData();
@@ -52,7 +52,7 @@ class ProjectsProvider extends ChangeNotifier {
       new Project(
         projectName: 'HQ Sales',
         description: [
-          'HQ Sales is a project that I worked on while I was working for “Protingieji kurmiai”. This job was definitely a kick-start to my journey as a developer.',
+          'HQ Sales is a project that I worked on while I was working for “Valdoware”. This job was definitely a kick-start to my journey as a developer.',
           'While working on this really big scale project, I had an opportunity to test myself with not just front-end programming but also back-end, devOps, Azure. This was a very rich experience to me from which I learned a lot.',
         ],
         technologies: [
@@ -74,39 +74,19 @@ class ProjectsProvider extends ChangeNotifier {
   void setSelectedProject(int index) {
     var selected = this.projects.elementAt(index);
     this.selectedProject = selected;
-    this.selectedImage = null;
-    this.setSelectedImage(Direction.Forward);
+    this.setSelectedImage(0);
     this.notifyListeners();
   }
 
-  void setSelectedImage(Direction direction) {
-    if (this.selectedProject == null ||
-        this.selectedProject!.images.length == 0) {
-      return;
+  int getSelectedProjectIndex() {
+    if (this.selectedProject == null) {
+      return 0;
     }
-    if (this.selectedImage == null) {
-      this.selectedImage = this.selectedProject!.images[0];
-    } else {
-      int index = this.selectedProject!.images.indexOf(this.selectedImage!);
-      switch (direction) {
-        case Direction.Back:
-          index =
-              index == 0 ? this.selectedProject!.images.length - 1 : index - 1;
-          break;
-        case Direction.Forward:
-          index =
-              index == this.selectedProject!.images.length - 1 ? 0 : index + 1;
-          break;
-        default:
-          break;
-      }
-      this.selectedImage = this.selectedProject!.images.elementAt(index);
-    }
+    return this.projects.indexOf(this.selectedProject!);
+  }
+
+  void setSelectedImage(int index) {
+    this.selectImageIndex = index;
     this.notifyListeners();
   }
-}
-
-enum Direction {
-  Back,
-  Forward,
 }

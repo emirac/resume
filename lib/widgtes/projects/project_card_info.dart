@@ -1,79 +1,38 @@
 import 'dart:html' as html;
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:resume/providers/projects_provider.dart';
-import 'package:resume/widgtes/projects/project_card_title.dart';
 
 class ProjectCardInfo extends StatelessWidget {
-  List<Widget> getText(List<String> description) {
-    List<Widget> widgets = [];
-
-    for (var i = 0; i < description.length; i++) {
-      if (i == 0 || i == description.length - 1) {
-        widgets.add(
-          Padding(
-            padding: EdgeInsets.only(
-              right: 6,
-              left: 6,
-            ),
-            child: Text(
-              description[i],
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.grey[500],
-              ),
-            ),
-          ),
-        );
-      } else {
-        widgets.add(
-          Text(
-            description[i],
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.grey[500],
-            ),
-          ),
-        );
-      }
-    }
-    return widgets;
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 350,
-      width: 350,
-      padding: EdgeInsets.all(8),
-      decoration: new BoxDecoration(
-        borderRadius: BorderRadius.circular(175),
-        color: Colors.grey[200],
-      ),
-      child: SizedBox(
-        height: 350,
-        width: 350,
-        child: Consumer<ProjectsProvider>(
-          builder: (_, ProjectsProvider projects, __) => Column(
+    double width = MediaQuery.of(context).size.width;
+    return Consumer<ProjectsProvider>(
+      builder: (_, ProjectsProvider projects, __) => Padding(
+        padding: const EdgeInsets.all(12),
+        child: Container(
+          width: width,
+          constraints: BoxConstraints(
+            maxWidth: 732,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 18),
-              ProjectCardTitle(projects.selectedProject?.projectName ?? ''),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 8, bottom: 8, left: 24, right: 24),
-                  child: Column(
-                    children: [
-                      ...getText(projects.selectedProject!.description)
-                    ],
-                  ),
-                ),
-              ),
+              ...projects.selectedProject!.description
+                  .map((para) => Text(
+                        para,
+                        style: TextStyle(color: Theme.of(context).accentColor),
+                      ))
+                  .toList(),
               Padding(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.only(
+                  top: 12,
+                  bottom: 12,
+                ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     ProjectCardLink(
                         'Code', projects.selectedProject?.codeURL ?? ''),
@@ -137,14 +96,14 @@ class ProjectCardLink extends StatelessWidget {
                 right: 8,
                 left: 8,
               ),
-              color: Colors.white,
+              color: this.link.length > 0
+                  ? Theme.of(context).primaryColor
+                  : Theme.of(context).accentColor,
               child: Text(
                 this.linkText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: this.link.length > 0
-                      ? Theme.of(context).primaryColor
-                      : Theme.of(context).accentColor,
+                  color: Colors.white,
                   fontSize: 12,
                 ),
               ),
