@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:resume/providers/projects_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCardInfo extends StatelessWidget {
   @override
@@ -75,6 +76,10 @@ class ProjectCardLink extends StatelessWidget {
 
   ProjectCardLink(this.linkText, this.link);
 
+  void _launchURL(link) async {
+    await canLaunch(link) ? await launch(link) : throw 'Could not launch URL';
+  }
+
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
@@ -109,9 +114,7 @@ class ProjectCardLink extends StatelessWidget {
               ),
             ),
           ),
-          onTap: () => {
-            if (this.link.length > 0) {html.window.open(this.link, '_blank')}
-          },
+          onTap: () => {if (this.link.length > 0) _launchURL(this.link)},
         ),
       ),
     );

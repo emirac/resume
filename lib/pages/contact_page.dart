@@ -1,12 +1,17 @@
-import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:resume/widgtes/common/page_divider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
+    Uri emaillUri = Uri(
+      scheme: 'mailto',
+      path: 'emilija.raciute@gmail.com',
+    );
+
     return ConstrainedBox(
       constraints: BoxConstraints(
         minHeight: height,
@@ -34,12 +39,18 @@ class ContactPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ContactItem(FontAwesomeIcons.linkedinIn,
-                          'https://www.linkedin.com'),
                       ContactItem(
-                          FontAwesomeIcons.githubAlt, 'https://www.github.com'),
+                        FontAwesomeIcons.linkedinIn,
+                        'https://www.linkedin.com/in/emilija-raciute/',
+                      ),
                       ContactItem(
-                          FontAwesomeIcons.envelope, 'https://www.gmail.com'),
+                        FontAwesomeIcons.githubAlt,
+                        'https://github.com/emirac',
+                      ),
+                      ContactItem(
+                        FontAwesomeIcons.envelope,
+                        emaillUri.toString(),
+                      ),
                     ],
                   ),
                 ],
@@ -89,6 +100,12 @@ class ContactItem extends StatelessWidget {
 
   ContactItem(this.icon, this.link);
 
+  void _launchURL() async {
+    await canLaunch(this.link)
+        ? await launch(this.link)
+        : throw 'Could not launch URL';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -98,9 +115,7 @@ class ContactItem extends StatelessWidget {
           child: MouseRegion(
             cursor: SystemMouseCursors.click,
             child: GestureDetector(
-              onTap: () => {
-                {html.window.open(this.link, '_blank')}
-              },
+              onTap: () => _launchURL(),
               child: Tooltip(
                 padding: EdgeInsets.all(4),
                 verticalOffset: 35,
