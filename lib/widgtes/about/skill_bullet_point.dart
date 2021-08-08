@@ -21,6 +21,9 @@ class SkillBulletPoint extends StatelessWidget {
           Flexible(
             child: Text(
               this.item,
+              style: TextStyle(
+                color: Theme.of(context).accentColor,
+              ),
             ),
           ),
         ],

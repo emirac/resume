@@ -16,6 +16,9 @@ class SkillProgressIndicator extends StatelessWidget {
       center: new Text(
         item,
         textAlign: TextAlign.center,
+        style: TextStyle(
+          color: Theme.of(context).accentColor,
+        ),
       ),
       progressColor: Theme.of(context).primaryColor,
     );

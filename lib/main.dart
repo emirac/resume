@@ -9,7 +9,6 @@ import 'package:resume/utils/screen_size_helper.dart';
 import 'package:resume/utils/screen_sizes.dart';
 import 'package:resume/widgtes/common/menu/menu_large_medium.dart';
 import 'package:resume/widgtes/common/menu/menu_small.dart';
-import 'package:resume/widgtes/common/page_decorators/left_decorator.dart';
 import 'package:resume/widgtes/common/page_decorators/right_decorator.dart';
 
 void main() {
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Colors.redAccent[400],
-        accentColor: Colors.grey[500],
+        accentColor: Colors.black45,
         highlightColor: Colors.grey[300],
         fontFamily: 'Quicksand',
       ),

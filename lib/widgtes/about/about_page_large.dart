@@ -35,16 +35,32 @@ class AboutDescription extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                    'A Front-End developer with a growing interest for Back-End development.'),
+                  'A Front-End developer with a growing interest for Back-End development.',
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
                 SizedBox(height: 18),
                 Text(
-                    'I started my journey in the software development world as a Front-End developer. However, during my working experience, I had opportunities to touch some Back-End and even some DevOps, which sparked my curiosity and determination to grow my skills beyond Front-End.'),
+                  'I started my journey in the software development world as a Front-End developer. However, during my working experience, I had opportunities to touch some Back-End and even some DevOps, which sparked my curiosity and determination to grow my skills beyond Front-End.',
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
                 SizedBox(height: 18),
                 Text(
-                    'So as I continue to deepen my knowledge in JavaScript, I am also practising my Back-End skills with a goal of a Full-Stack developer in mind.'),
+                  'So as I continue to deepen my knowledge in JavaScript, I am also practising my Back-End skills with a goal of a Full-Stack developer in mind.',
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
                 SizedBox(height: 18),
                 Text(
-                    'Below you can see the technologies and tools that I am familiar with and how confident I am working with them.'),
+                  'Below you can see the technologies and tools that I am familiar with and how confident I am working with them.',
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
               ],
             ),
           ),
@@ -88,7 +104,12 @@ class AboutSkills extends StatelessWidget {
           children: [
             Column(
               children: [
-                Text('Backend tools and technologies:'),
+                Text(
+                  'Backend tools and technologies:',
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
                 SizedBox(
                   height: 12,
                 ),
@@ -107,7 +128,12 @@ class AboutSkills extends StatelessWidget {
             ),
             Column(
               children: [
-                Text('Frontend tools and technologies:'),
+                Text(
+                  'Frontend tools and technologies:',
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
                 SizedBox(
                   height: 12,
                 ),
@@ -129,7 +155,12 @@ class AboutSkills extends StatelessWidget {
                 SizedBox(
                   height: 12,
                 ),
-                Text('Other knowledge:'),
+                Text(
+                  'Other knowledge:',
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
+                ),
                 SizedBox(
                   height: 24,
                 ),
