@@ -98,7 +98,7 @@ class ProjectCardLink extends StatelessWidget {
               ),
               color: this.link.length > 0
                   ? Theme.of(context).primaryColor
-                  : Theme.of(context).accentColor,
+                  : Theme.of(context).highlightColor,
               child: Text(
                 this.linkText,
                 textAlign: TextAlign.center,

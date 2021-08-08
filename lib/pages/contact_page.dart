@@ -1,7 +1,6 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hovering/hovering.dart';
 import 'package:resume/widgtes/common/page_divider.dart';
 
 class ContactPage extends StatelessWidget {
@@ -22,13 +21,27 @@ class ContactPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,'),
-                  SizedBox(
-                    height: 64,
+                    'Feel free to contact me!',
+                    style: TextStyle(
+                      fontSize: 24,
+                      letterSpacing: 2.5,
+                      color: Theme.of(context).accentColor,
+                    ),
                   ),
-                  ContactItem(FontAwesomeIcons.linkedin, 'www.linkedin.com'),
-                  ContactItem(FontAwesomeIcons.github, 'www.github.com'),
-                  ContactItem(FontAwesomeIcons.envelope, 'www.gmail.com'),
+                  SizedBox(
+                    height: 48,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ContactItem(FontAwesomeIcons.linkedinIn,
+                          'https://www.linkedin.com'),
+                      ContactItem(
+                          FontAwesomeIcons.githubAlt, 'https://www.github.com'),
+                      ContactItem(
+                          FontAwesomeIcons.envelope, 'https://www.gmail.com'),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -78,44 +91,39 @@ class ContactItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(8),
-      child: Row(
-        children: [
-          FaIcon(
-            this.icon,
-            color: Theme.of(context).primaryColor,
-          ),
-          SizedBox(
-            width: 8,
-          ),
-          HoverWidget(
-            onHover: (event) => {},
-            child: Text(
-              this.link,
-              style: TextStyle(
-                decoration: TextDecoration.none,
-                color: Theme.of(context).primaryColor,
-              ),
-            ),
-            hoverChild: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () => {
-                  {html.window.open(this.link, 'new tab')}
-                },
-                child: Text(
-                  this.link,
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
+    return Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(right: 12, left: 12),
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () => {
+                {html.window.open(this.link, '_blank')}
+              },
+              child: Tooltip(
+                padding: EdgeInsets.all(4),
+                verticalOffset: 35,
+                message: this.link,
+                child: Container(
+                  height: 48,
+                  width: 48,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
                     color: Theme.of(context).primaryColor,
+                  ),
+                  child: Center(
+                    child: FaIcon(
+                      this.icon,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
