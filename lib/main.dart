@@ -48,6 +48,7 @@ class MyAppPage extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
+      color: Colors.white,
       child: Stack(
         children: [
           Row(
