@@ -49,4 +49,10 @@ class _AnimatedDiamond extends State<AnimatedDiamond>
           }),
     );
   }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 }

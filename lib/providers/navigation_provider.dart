@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 typedef onPageChangeCallback = void Function(int);
 
 class NavigationProvider {
+  double disableUntil = -1;
   final scrollController = new ScrollController();
 
   onPageChangeCallback onPageChanged;
@@ -13,18 +14,14 @@ class NavigationProvider {
 
   NavigationProvider(this.onPageChanged) {
     scrollController.addListener(() {
-      var index = 0;
-      var total = 0.0;
-      sizes.forEach((key, value) {
-        if (scrollController.offset >= total * 0.9) {
-          index = key;
+      if (disableUntil != -1) {
+        if (scrollController.offset == disableUntil) {
+          disableUntil = -1;
+        } else {
+          return;
         }
-        total += value;
-      });
-      if (lastIndex != index) {
-        this.lastIndex = index;
-        this.onPageChanged(this.lastIndex);
       }
+      recalcPosition();
     });
   }
 
@@ -39,8 +36,31 @@ class NavigationProvider {
         offset += value;
       }
     });
+    disableUntil = offset;
+    scrollController
+        .animateTo(
+      offset,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeIn,
+    )
+        .then((value) {
+      disableUntil = -1;
+      recalcPosition();
+    });
+  }
 
-    scrollController.animateTo(offset,
-        duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+  void recalcPosition() {
+    var index = 0;
+    var total = 0.0;
+    sizes.forEach((key, value) {
+      if (scrollController.offset >= total * 0.9) {
+        index = key;
+      }
+      total += value;
+    });
+    if (lastIndex != index) {
+      this.lastIndex = index;
+      this.onPageChanged(this.lastIndex);
+    }
   }
 }

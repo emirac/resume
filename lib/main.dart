@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Emilija Raciute | Personal website',
       theme: ThemeData(
         primaryColor: Colors.redAccent[400],
         accentColor: Colors.black45,
@@ -45,7 +45,6 @@ class MyAppPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final _data = Provider.of<MenuProvider>(context, listen: false);
 
-    _data.addListener(() {});
     double width = MediaQuery.of(context).size.width;
 
     return Container(
@@ -53,9 +52,12 @@ class MyAppPage extends StatelessWidget {
         children: [
           Row(
             children: [
-              ScreenSizeHelper.getScreenSize(width) == ScreenSizes.Small
-                  ? MenuSmall()
-                  : MenuLargeMedium(),
+              SizedBox(
+                width:
+                    ScreenSizeHelper.getScreenSize(width) == ScreenSizes.Small
+                        ? 42
+                        : 160,
+              ),
               Expanded(
                 flex: 10,
                 child:
@@ -90,7 +92,10 @@ class MyAppPage extends StatelessWidget {
             ],
           ),
           if (ScreenSizeHelper.getScreenSize(width) != ScreenSizes.Small)
-            Positioned(child: RightDecorator(), right: 0)
+            Positioned(child: RightDecorator(), right: 0),
+          ScreenSizeHelper.getScreenSize(width) == ScreenSizes.Small
+              ? MenuSmall()
+              : MenuLargeMedium(),
         ],
       ),
     );

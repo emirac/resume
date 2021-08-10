@@ -59,6 +59,7 @@ class AboutPageSmall extends StatelessWidget {
                   maxWidth: 350,
                 ),
                 child: GridView.count(
+                  physics: NeverScrollableScrollPhysics(),
                   childAspectRatio: 1 / 1,
                   crossAxisCount: 3,
                   children: [...backendSkils],
@@ -78,6 +79,7 @@ class AboutPageSmall extends StatelessWidget {
                   maxWidth: 350,
                 ),
                 child: GridView.count(
+                  physics: NeverScrollableScrollPhysics(),
                   childAspectRatio: 1 / 1,
                   crossAxisCount: 3,
                   children: [...frontendSkills],

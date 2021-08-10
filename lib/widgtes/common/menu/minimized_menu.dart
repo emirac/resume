@@ -8,9 +8,14 @@ import '../diamond.dart';
 class MinimizedMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<MenuProvider>(
-      builder: (_, MenuProvider menu, __) =>
-          menu.showMenu ? FullScreenMenu() : MenuIcon(),
+    return Stack(
+      children: [
+        Consumer<MenuProvider>(
+          builder: (_, MenuProvider menu, __) => menu.showMenu
+              ? FullScreenMenu()
+              : Positioned(left: 8, child: MenuIcon()),
+        ),
+      ],
     );
   }
 }
@@ -19,7 +24,10 @@ class MenuIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(
+        top: 16,
+        left: 8,
+      ),
       child: Consumer<MenuProvider>(
         builder: (_, MenuProvider menu, __) => InkWell(
           onTap: () => menu.toggleMenu(),

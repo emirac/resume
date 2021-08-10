@@ -4,10 +4,14 @@ import 'minimized_menu.dart';
 class MenuSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        MinimizedMenu(),
-      ],
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: Stack(
+        children: [
+          MinimizedMenu(),
+        ],
+      ),
     );
   }
 }
