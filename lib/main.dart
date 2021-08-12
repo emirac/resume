@@ -56,7 +56,7 @@ class MyAppPage extends StatelessWidget {
               SizedBox(
                 width:
                     ScreenSizeHelper.getScreenSize(width) == ScreenSizes.Small
-                        ? 42
+                        ? 32
                         : 160,
               ),
               Expanded(
@@ -68,7 +68,10 @@ class MyAppPage extends StatelessWidget {
                     physics: BouncingScrollPhysics(),
                     child: Padding(
                       padding: EdgeInsets.only(
-                        right: 46,
+                        right: ScreenSizeHelper.getScreenSize(width) ==
+                                ScreenSizes.Small
+                            ? 32
+                            : 46,
                       ),
                       child: Column(
                         children: [

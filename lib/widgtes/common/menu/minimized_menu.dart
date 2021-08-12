@@ -26,7 +26,6 @@ class MenuIcon extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         top: 16,
-        left: 8,
       ),
       child: Consumer<MenuProvider>(
         builder: (_, MenuProvider menu, __) => InkWell(

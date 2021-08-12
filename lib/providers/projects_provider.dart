@@ -20,9 +20,9 @@ class ProjectsProvider extends ChangeNotifier {
             'In the end, I really like what I created form myself and I also feel that this was great project, to get familiar with flutter.',
           ],
           images: [
-            'images/test1.jpeg',
-            'images/test2.jpeg',
-            'images/test3.jpeg',
+            'images/personal_1.png',
+            'images/personal_2.png',
+            'images/personal_3.png',
           ],
           codeURL: 'https://github.com/emirac/resume',
           demoURL: 'https://emirac.github.io',
