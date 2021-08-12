@@ -27,6 +27,7 @@ class ContactPage extends StatelessWidget {
                 children: [
                   Text(
                     'Feel free to contact me!',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 24,
                       letterSpacing: 2.5,

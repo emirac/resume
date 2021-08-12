@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'diamond.dart';
 
 class RotatingDiamond extends StatefulWidget {
-  Color? color;
+  final Color? color;
 
   RotatingDiamond({this.color});
 
@@ -20,11 +19,6 @@ class _RotatingDiamond extends State<RotatingDiamond>
     duration: const Duration(milliseconds: 500),
     vsync: this,
   )..forward();
-
-  late final Animation<double> _animation = CurvedAnimation(
-    parent: _controller,
-    curve: Curves.easeIn,
-  );
 
   _RotatingDiamond(this.color);
 
@@ -43,5 +37,11 @@ class _RotatingDiamond extends State<RotatingDiamond>
       },
       child: Diamond(color: this.color),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
