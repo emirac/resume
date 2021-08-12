@@ -10,6 +10,7 @@ import 'package:resume/utils/screen_sizes.dart';
 import 'package:resume/widgtes/common/menu/menu_large_medium.dart';
 import 'package:resume/widgtes/common/menu/menu_small.dart';
 import 'package:resume/widgtes/common/page_decorators/right_decorator.dart';
+import 'package:resume/widgtes/projects/project_card_image.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
@@ -44,8 +45,16 @@ class MyAppPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _data = Provider.of<MenuProvider>(context, listen: false);
+    final _projects = Provider.of<ProjectsProvider>(context, listen: true);
 
     double width = MediaQuery.of(context).size.width;
+
+    Widget getWidget() {
+      if (_projects.showImagePopup) {
+        return ImageEnlarged();
+      }
+      return SizedBox.shrink();
+    }
 
     return Container(
       color: Colors.white,
@@ -100,6 +109,7 @@ class MyAppPage extends StatelessWidget {
           ScreenSizeHelper.getScreenSize(width) == ScreenSizes.Small
               ? MenuSmall()
               : MenuLargeMedium(),
+          getWidget(),
         ],
       ),
     );

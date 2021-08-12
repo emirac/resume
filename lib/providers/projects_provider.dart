@@ -5,6 +5,7 @@ class ProjectsProvider extends ChangeNotifier {
   List<Project> projects = [];
   Project? selectedProject;
   int? selectImageIndex;
+  bool showImagePopup = false;
 
   ProjectsProvider() {
     setInitialData();
@@ -87,6 +88,11 @@ class ProjectsProvider extends ChangeNotifier {
 
   void setSelectedImage(int index) {
     this.selectImageIndex = index;
+    this.notifyListeners();
+  }
+
+  void toggleImagePopup() {
+    this.showImagePopup = !this.showImagePopup;
     this.notifyListeners();
   }
 }
