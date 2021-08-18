@@ -62,9 +62,7 @@ flutter:
     - assets/images/personal_1.png
     - assets/images/personal_2.png
     - assets/images/personal_3.png
-    - assets/images/test1.jpeg
-    - assets/images/test2.jpeg
-    - assets/images/test3.jpeg
+    - assets/images/eat_smart_1.png
 
   fonts:
     - family: Source Code Pro

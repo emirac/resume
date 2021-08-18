@@ -14,31 +14,38 @@ class ProjectsProvider extends ChangeNotifier {
   void setInitialData() {
     projects.add(
       new Project(
-          projectName: 'Personal website',
-          description: [
-            'After finding out about flutter I really wanted to try it and play around with it for a bit. So for that purpose I decided to make a personal website for myself.',
-            'This was a fun process from start to finish: from designing it to nit picking the smallest details and admiring the end result.',
-            'In the end, I really like what I created form myself and I also feel that this was great project, to get familiar with flutter.',
-          ],
-          images: [
-            'images/personal_1.png',
-            'images/personal_2.png',
-            'images/personal_3.png',
-          ],
-          codeURL: 'https://github.com/emirac/resume',
-          demoURL: 'https://emirac.github.io',
-          technologies: ['Flutter']),
+        projectName: 'Personal website',
+        description: [
+          'In my free time I wanted to learn something new and Flutter seemed like a great new language to get my hands on. So I decided to make personal website for myself.',
+          'I wanted this website to be aesthetically pleasing and laid out a design that had some complex elements. Also I knew that I will have to add some animations for better user experience. And of course, everything has to be responsive!',
+          'I would say that Flutter is definitely more advantageous than HTML and CSS but it is not easier. For the challenges mentioned above I had to really change my perspective of thinking to switch from HTML tags to widgets. After being able to “think in widgets”, right now, I would feel comfortable taking on a project of a bigger scale with Flutter.',
+          'I would say, this project was a great learning experience. I am also very satisfied with the end result.',
+        ],
+        images: [
+          'images/personal_1.png',
+          'images/personal_2.png',
+          'images/personal_3.png',
+        ],
+        codeURL: 'https://github.com/emirac/resume',
+        demoURL: 'https://emirac.github.io',
+        technologies: ['Flutter'],
+      ),
     );
     projects.add(
       new Project(
         projectName: 'EatSmart',
         description: [
-          'My colleague had an idea for a food intake tracking app, would count not only calories but also vitamins and other compounds. Also, the app would give suggestions what to eat based on what user has in their fridge.',
-          'So I took part, albeit small, in developing this app. I feel that the main things that I learned from this project and my colleague were how to plan out a project and how to prioritise features.',
+          'My colleague had very bad and inconsistent eating habits. He wanted to create an app that would help him stay on track with his diet. My colleague did not want one those apps that just make you count your calories, he wanted to go bigger: the app in mind would suggest the user what to eat based on what user has in their fridge. Also it would count not only calories, but vitamins and compounds such as iron or magnesium as well. And so he invited me to join in developing this app.',
+          'Right from the start, it was clear that this project will require a big amount of data. Also, my colleague wanted this to have a really good user experience, when it is really easy for user to add various combinations of meals. To achieve these goals, we had to integrate multiple food databases including the largest US food database FDC. And for the user convenience there were several solutions. First - recipes, so user can add their favourites recipes with accurate ingredients and amounts. Another one - builders for repetitive items such as lunch and sandwiches. Builders provide user options for different components, i. e. different bread types for a sandwich.',
+          'Albeit my colleague and I are already using this app, it is still not finished, we are still further improving user experience. And in the future, the are plans to integrate AI for meal suggestions.',
+          'From this project and my colleague I learned how to plan out a project and how to prioritise features. And, of course, now I have an app that helps me to stay on track with my eating!'
         ],
         images: [
-          'images/test1.jpeg',
-          'images/test1.jpeg',
+          'images/eat_smart_1.png',
+          'images/eat_smart_2.png',
+          'images/eat_smart_3.png',
+          'images/eat_smart_4.png',
+          'images/eat_smart_5.png',
         ],
         technologies: [
           'Flutter',
@@ -53,8 +60,9 @@ class ProjectsProvider extends ChangeNotifier {
       new Project(
         projectName: 'HQ Sales',
         description: [
-          'HQ Sales is a project that I worked on while I was working for “Valdoware”. This job was definitely a kick-start to my journey as a developer.',
-          'While working on this really big scale project, I had an opportunity to test myself with not just front-end programming but also back-end, devOps, Azure. This was a very rich experience to me from which I learned a lot.',
+          'While working for “Protingieji kurmiai” (“Valdoware”) I was part of development team for a really big scale project that involved Azure cloud, integrations to other systems, huge amounts of data and complex, dynamic calculations.',
+          'During two years of working on this project I had too many challenges to describe them all, but I would like to mention at least one of them. To send information to another system, we were building a JSON object. It started out simple, but over time the JSON grew and its build process produced more and more bugs. So I got the task to refactor this build process. I got a chance to use design patterns here, the builder pattern to be exact. After refactoring it was possible to cover this build process with tests and the amount of bugs reported for this part of system dropped significantly.',
+          'In general, I consider this job to be a kick-start to my journey as a developer, so I am very grateful for this experience. This job, was were I got really familiar with a lot of technologies and design patterns.'
         ],
         technologies: [
           'Vue.js',

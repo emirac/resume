@@ -145,7 +145,10 @@ class ImageEnlarged extends StatelessWidget {
             child: SizedBox(
               height: getSize(height, width),
               width: getSize(height, width),
-              child: ImageCarousel(getSize(height, width), Icons.close),
+              child: Container(
+                color: Colors.white,
+                child: ImageCarousel(getSize(height, width), Icons.close),
+              ),
             ),
           ),
         ],
