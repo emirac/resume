@@ -1,11 +1,11 @@
 {
-    "name": "resume",
-    "short_name": "resume",
+    "name": "Emilija Raciute",
+    "short_name": "Emilija Raciute",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Personal website",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
