@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume/pages/about_page.dart';
+import 'package:resume/widgtes/about/about_page_large.dart';
 import 'package:resume/widgtes/about/name.dart';
 import 'package:resume/widgtes/about/title.dart';
 
@@ -38,23 +39,7 @@ class AboutPageMedium extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.all(16),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                      'A Front-End developer with a growing interest for Back-End development.'),
-                  SizedBox(height: 18),
-                  Text(
-                      'I started my journey in the software development world as a Front-End developer. However, during my working experience, I had opportunities to touch some Back-End and even some DevOps, which sparked my curiosity and determination to grow my skills beyond Front-End.'),
-                  SizedBox(height: 18),
-                  Text(
-                      'So as I continue to deepen my knowledge in JavaScript, I am also practising my Back-End skills with a goal of a Full-Stack developer in mind.'),
-                  SizedBox(height: 18),
-                  Text(
-                      'Below you can see the technologies and tools that I am familiar with and how confident I am working with them.'),
-                ],
-              ),
+              child: AboutPageText(),
             ),
             SizedBox(
               height: 16,

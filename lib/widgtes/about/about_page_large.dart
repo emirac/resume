@@ -3,6 +3,45 @@ import 'package:resume/pages/about_page.dart';
 import 'package:resume/widgtes/about/name.dart';
 import 'package:resume/widgtes/about/title.dart';
 
+class AboutPageText extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'A software developer who is quick to learn and adapt and has a lot of perseverance, drive and creativity.',
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+          ),
+        ),
+        SizedBox(height: 12),
+        Text(
+          'I have 3+ years of professional experience and also expand my knowledge and stack by developing personal projects.',
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+          ),
+        ),
+        SizedBox(height: 12),
+        Text(
+          'At this point in my career, I am mostly focused on applying my existing knowledge in developing complex solutions for various problems and challenges.',
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+          ),
+        ),
+        SizedBox(height: 12),
+        Text(
+          'Below you can see the technologies and tools that I am familiar with and how confident I am working with them.',
+          style: TextStyle(
+            color: Theme.of(context).accentColor,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class AboutPageLarge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -30,39 +69,7 @@ class AboutDescription extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'A Front-End developer with a growing interest for Back-End development.',
-                  style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                  ),
-                ),
-                SizedBox(height: 18),
-                Text(
-                  'I started my journey in the software development world as a Front-End developer. However, during my working experience, I had opportunities to touch some Back-End and even some DevOps, which sparked my curiosity and determination to grow my skills beyond Front-End.',
-                  style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                  ),
-                ),
-                SizedBox(height: 18),
-                Text(
-                  'So as I continue to deepen my knowledge in JavaScript, I am also practising my Back-End skills with a goal of a Full-Stack developer in mind.',
-                  style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                  ),
-                ),
-                SizedBox(height: 18),
-                Text(
-                  'Below you can see the technologies and tools that I am familiar with and how confident I am working with them.',
-                  style: TextStyle(
-                    color: Theme.of(context).accentColor,
-                  ),
-                ),
-              ],
-            ),
+            child: AboutPageText(),
           ),
           Container(
             constraints: BoxConstraints(
